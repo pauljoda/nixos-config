@@ -1,7 +1,7 @@
 { ... }:
 {
   programs.waybar.settings.mainBar = {
-    position= "bottom";
+    position= "top";
     layer= "top";
     height= 5;
     margin-top= 0;
@@ -29,7 +29,7 @@
         calendar = {
           format = { today = "<span color='#b4befe'><b><u>{}</u></b></span>"; };
         };
-        format = " {:%H:%M}";
+        format = " {:%I:%M %p   %m/%d/%Y}";
         tooltip= "true";
         tooltip-format= "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>";
         format-alt= " {:%d/%m}";
@@ -37,13 +37,13 @@
     "hyprland/workspaces"= {
         active-only= false;
         disable-scroll= true;
-        format = "{icon}";
+        format = "{name}{icon}";
         on-click= "activate";
         format-icons= {
-            "1"= "󰈹";
+            "1"= "󰰷";
             "2"= "";
             "3"= "󰘙";
-            "4"= "󰙯";
+            "4"= "";
             "5"= "";
             "6"= "";
             urgent= "";
@@ -56,6 +56,7 @@
             "3"= [];
             "4"= [];
             "5"= [];
+            "6"= [];
         };
     };
     memory= {

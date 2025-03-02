@@ -1,9 +1,11 @@
 { inputs, ... }: 
 {
-  imports = [ (import ./hyprland.nix) ]
-    ++ [ (import ./config.nix) ]
-    ++ [ (import ./hyprlock.nix) ]
-    ++ [ (import ./variables.nix) ]
-    ++ [ (import ./pyprland.nix)]
-    ++ [ inputs.hyprland.homeManagerModules.default ];
+  imports = [
+    ./hyprland.nix
+    ./config.nix
+    ./hyprlock.nix
+    ./variables.nix
+    ./pyprland.nix
+    inputs.hyprland.homeManagerModules.default
+  ];
 }

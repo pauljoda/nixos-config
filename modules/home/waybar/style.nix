@@ -54,14 +54,17 @@ in
         padding-left: 15px;
         padding-right: 9px;
         margin-left: 7px;
+        color: @green;
     }
     #memory {
         padding-left: 9px;
         padding-right: 9px;
+        color: @sky;
     }
     #disk {
         padding-left: 9px;
         padding-right: 15px;
+        color: @sapphire;
     }
 
     #tray {

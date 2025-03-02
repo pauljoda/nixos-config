@@ -10,6 +10,7 @@
       plugins = [ "git" "fzf" ];
     };
     initExtraFirst = ''
+      maxfetch
       DISABLE_MAGIC_FUNCTIONS=true
       export "MICRO_TRUECOLOR=1"
     '';

@@ -101,6 +101,11 @@
         key = "ctrl+s";
         command = "workbench.action.files.saveFiles";
       }
+      {
+        key = "ctrl+c";
+        command = "editor.action.clipboardCopyAction";
+        when = "editorTextFocus && !editorReadonly";
+      }
     ];
   };
 }

@@ -32,10 +32,10 @@ up=$(sed -e "s/ m/m/g" <<< ${up})
 pkgs=$(nix-store --query --requisites /run/current-system | wc -l)
 
 fetch() {
-    echo "${cyan}$(tput bold)     _  ___      ____  ____    ${normal}$(tput sgr0)"
-    echo "${cyan}$(tput bold)    / |/ (_)_ __/ __ \/ __/    ${normal}$(tput sgr0)"
-    echo "${cyan}$(tput bold)   /    / /\ \ / /_/ /\ \      ${normal}$(tput sgr0)"
-    echo "${cyan}$(tput bold)  /_/|_/_//_\_"'\\'"____/___/  ${normal}$(tput sgr0)"
+    echo "${cyan}$(tput bold)___           _    ___  ___ ${normal}$(tput sgr0)"
+    echo "${cyan}$(tput bold)| _ \__ _ _  _| |  / _ \/ __|${normal}$(tput sgr0)"
+    echo "${cyan}$(tput bold)|  _/ _\` | || | | | (_) \__ \\${normal}$(tput sgr0)"
+    echo "${cyan}$(tput bold)|_| \__,_|\_,_|_|  \___/|___/${normal}$(tput sgr0)"
     echo ""
     echo "  ╭─────────────╮ "
     echo "  │  ${red} ${normal} user    │ ${red}$(whoami)${normal}"
