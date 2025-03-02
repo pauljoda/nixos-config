@@ -35,7 +35,10 @@
     git
   ];
 
-  time.timeZone = "Europe/Paris";
+  # For Electron apps to use wayland
+  environment.sessionVariables.NIXOS_OZONE_WL = "1";
+
+  time.timeZone = "America/Chicago";
   i18n.defaultLocale = "en_US.UTF-8";
   nixpkgs.config.allowUnfree = true;
   system.stateVersion = "24.05";

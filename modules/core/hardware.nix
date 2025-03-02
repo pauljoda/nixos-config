@@ -1,7 +1,6 @@
 { inputs, pkgs, ... }:
 let
-  hyprland-pkgs =
-    inputs.hyprland.inputs.nixpkgs.legacyPackages.${pkgs.stdenv.hostPlatform.system};
+  hyprland-pkgs = inputs.hyprland.inputs.nixpkgs.legacyPackages.${pkgs.stdenv.hostPlatform.system};
 in
 {
   hardware = {
@@ -17,4 +16,7 @@ in
     };
   };
   hardware.enableRedistributableFirmware = true;
+
+  # Thunderbolt
+  services.hardware.bolt.enable = true;
 }

@@ -21,7 +21,7 @@
       ];
 
       input = {
-        kb_layout = "us,fr";
+        kb_layout = "us";
         kb_options = "grp:alt_caps_toggle";
         numlock_by_default = true;
         repeat_delay = 300;
@@ -364,12 +364,12 @@
         "noblur,class:^(xwaylandvideobridge)$"
 
         # No gaps when only
-        "bordersize 0, floating:0, onworkspace:w[t1]"
-        "rounding 0, floating:0, onworkspace:w[t1]"
-        "bordersize 0, floating:0, onworkspace:w[tg1]"
-        "rounding 0, floating:0, onworkspace:w[tg1]"
-        "bordersize 0, floating:0, onworkspace:f[1]"
-        "rounding 0, floating:0, onworkspace:f[1]"
+        # "bordersize 0, floating:0, onworkspace:w[t1]"
+        # "rounding 0, floating:0, onworkspace:w[t1]"
+        # "bordersize 0, floating:0, onworkspace:w[tg1]"
+        # "rounding 0, floating:0, onworkspace:w[tg1]"
+        # "bordersize 0, floating:0, onworkspace:f[1]"
+        # "rounding 0, floating:0, onworkspace:f[1]"
 
         # "maxsize 1111 700, floating: 1"
         # "center, floating: 1"
@@ -381,11 +381,11 @@
       ];
 
       # No gaps when only
-      workspace = [
-        "w[t1], gapsout:0, gapsin:0"
-        "w[tg1], gapsout:0, gapsin:0"
-        "f[1], gapsout:0, gapsin:0"
-      ];
+      # workspace = [
+      #   "w[t1], gapsout:0, gapsin:0"
+      #   "w[tg1], gapsout:0, gapsin:0"
+      #   "f[1], gapsout:0, gapsin:0"
+      # ];
     };
 
     extraConfig = "
