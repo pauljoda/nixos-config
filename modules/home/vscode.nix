@@ -16,6 +16,10 @@
       # Remote Login for servers
       ms-vscode-remote.remote-ssh
 
+      # AI
+      github.copilot
+      github.copilot-chat
+
       # Color theme
       #catppuccin.catppuccin-vsc
       catppuccin.catppuccin-vsc-icons
