@@ -11,8 +11,8 @@
 
     [scratchpads.term]
     animation = "fromTop"
-    command = "ghostty --class main-dropterm"
-    class = "main-dropterm"
+    command = "kitty --class kitty-dropterm"
+    class = "kitty-dropterm"
     size = "75% 60%"
   '';
 }
