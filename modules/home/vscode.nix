@@ -3,7 +3,7 @@
   programs.vscode = {
     enable = true;
     package = pkgs.vscode;
-    extensions = with pkgs.vscode-extensions; [
+    profiles.default.extensions = with pkgs.vscode-extensions; [
       # nix language
       bbenoist.nix
       # nix-shell suport 

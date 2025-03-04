@@ -19,7 +19,6 @@
     ./packages.nix                  # other packages
     ./retroarch.nix
     ./scripts/scripts.nix           # personal scripts
-    ./spicetify.nix                 # spotify client
     ./starship.nix                  # shell prompt
     # ./steam.nix                     # Games
     ./swaylock.nix                  # lock screen
