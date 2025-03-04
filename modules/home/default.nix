@@ -19,11 +19,12 @@
     ./packages.nix                  # other packages
     ./retroarch.nix
     ./scripts/scripts.nix           # personal scripts
-    ./starship.nix                  # shell prompt
+    ./starship                  # shell prompt
     # ./steam.nix                     # Games
     ./swaylock.nix                  # lock screen
     ./vscode.nix                    # vscode fork
     ./waybar                        # status bar
+    ./xdg-mimes.nix
     ./zsh                           # shell
   ];
 }

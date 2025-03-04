@@ -30,15 +30,15 @@
       package = pkgs.dracula-theme;
     };
     cursorTheme = {
-      name = "Nordzy-cursors";
-      package = pkgs.nordzy-cursor-theme;
+      name = "Bibata-Modern-Ice";
+      package = pkgs.bibata-cursors;
       size = 22;
     };
   };
   
   home.pointerCursor = {
-    name = "Nordzy-cursors";
-    package = pkgs.nordzy-cursor-theme;
+    name = "Bibata-Modern-Ice";
+    package = pkgs.bibata-cursors;
     size = 22;
   };
 }

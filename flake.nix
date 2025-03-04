@@ -11,6 +11,8 @@
     alejandra.url = "github:kamadorueda/alejandra/3.0.0";
   
     nix-gaming.url = "github:fufexan/nix-gaming";
+
+    nix-flatpak.url = "github:gmodena/nix-flatpak";
   
     hyprland = {
       type = "git";
@@ -33,9 +35,6 @@
       url = "github:catppuccin/cava";
       flake = false;
     };
-
-    spicetify-nix.url = "github:gerg-l/spicetify-nix";
-    spicetify-nix.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = { nixpkgs, self, ...} @ inputs:

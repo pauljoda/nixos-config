@@ -140,7 +140,7 @@
         # keybindings
         "$mainMod, Return, exec, kitty"
         "ALT, Return, exec, kitty --title float_kitty"
-        "$mainMod, B, exec, hyprctl dispatch exec '[workspace 1 silent] zen'"
+        "$mainMod, B, exec, zen"
         "$mainMod, Q, killactive,"
         "$mainMod, F, fullscreen, 0"
         "$mainMod SHIFT, F, fullscreen, 1"
