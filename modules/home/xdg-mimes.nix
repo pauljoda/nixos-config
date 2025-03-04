@@ -3,7 +3,7 @@ with lib;
 let
   defaultApps = {
     browser = [ "zen.desktop" ];
-    text = [ "org.gnome.TextEditor.desktop" ];
+    text = [ "code.desktop" ];
     image = [ "imv-dir.desktop" ];
     audio = [ "mpv.desktop" ];
     video = [ "mpv.desktop" ];
@@ -88,12 +88,13 @@ let
       )
     );
 in
+
 {
+  xdg.enable = true;
   xdg.configFile."mimeapps.list".force = true;
   xdg.mimeApps.enable = true;
   xdg.mimeApps.associations.added = associations;
   xdg.mimeApps.defaultApplications = associations;
-
   home.sessionVariables = {
     # prevent wine from creating file associations
     WINEDLLOVERRIDES = "winemenubuilder.exe=d";

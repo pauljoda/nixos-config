@@ -9,6 +9,7 @@
     DISABLE_QT5_COMPAT = "0";
     GDK_BACKEND = "wayland";
     GDK_SCALE = 1;
+    EDITOR = "code";
     ANKI_WAYLAND = "1";
     DIRENV_LOG_FORMAT = "";
     WLR_DRM_NO_ATOMIC = "1";
