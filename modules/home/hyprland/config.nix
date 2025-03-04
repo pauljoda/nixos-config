@@ -37,6 +37,11 @@
         };
       };
 
+      device = {
+        name = "mx-master-mouse";
+        sensitivity = -0.7;
+      };
+
       general = {
         "$mainMod" = "SUPER";
         layout = "dwindle";
@@ -47,6 +52,8 @@
         "col.inactive_border" = "0x00000000";
         #border_part_of_window = true;
         no_border_on_floating = false;
+        resize_on_border = true;
+        hover_icon_on_border = true;
       };
 
       misc = {
