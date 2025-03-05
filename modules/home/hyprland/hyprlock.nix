@@ -2,97 +2,89 @@
 {
   home.packages = [ pkgs.hyprlock ];
   xdg.configFile."hypr/hyprlock.conf".text = ''
-    $red = rgb(f38ba8)
-    $yellow = rgb(f9e2af)
-    $lavender = rgb(b4befe)
+    source = /home/$USER/.cache/wal/colors-hyprland
 
-    $mauve = rgb(cba6f7)
-    $mauveAlpha = cba6f7
-
-    $base = rgb(1e1e2e)
-    $surface0 = rgb(313244)
-    $text = rgb(cdd6f4)
-    $textAlpha = cdd6f4
-
-    $accent = $lavender
-    $accentAlpha = $mauveAlpha
-    $font = JetBrainsMono Nerd Font
-
-    # GENERAL
-    general {
-      disable_loading_bar = true
-      hide_cursor = true
-    }
-
-    # BACKGROUND
     background {
-      monitor =
-      path = ~/Pictures/wallpapers/others/cat-leaves.png
-      color = $base
-      blur_passes = 0
+        monitor =
+        path = $wallpaper
+        blur_size = 5
+        blur_passes = 3
+        brightness = .6
     }
-
-    # TIME
-    label {
-      monitor =
-      text = cmd[update:30000] echo "<b><big> $(date +"%R") </big></b>"
-      color = $text
-      font_size = 110
-      font_family = $font
-      shadow_passes = 3
-      shadow_size = 3
-
-      position = 0, -100
-      halign = center
-      valign = top
-    }
-
-    # DATE 
-    label {
-      monitor = 
-      text = cmd[update:43200000] echo "$(date +"%A, %d %B %Y")"
-      color = $text
-      font_size = 18
-      font_family = $font
-      position = 0, -300
-      halign = center
-      valign = top
-    }
-
-    # USER AVATAR
-
-    image {
-      monitor = 
-      path = ~/Pictures/pp/pp.png
-      size = 125
-      border_color = $accent
-
-      position = 0, -450
-      halign = center
-      valign = center
-    }
-
-    # INPUT FIELD
     input-field {
-      monitor =
-      size = 300, 60
-      outline_thickness = 4
-      dots_size = 0.2
-      dots_spacing = 0.4
-      dots_center = true
-      outer_color = $accent
-      inner_color = $surface0
-      font_color = $text
-      fade_on_empty = false
-      placeholder_text = <span foreground="##$textAlpha"><i>󰌾  Logged in as </i><span foreground="##$accentAlpha">$USER</span></span>
-      hide_input = false
-      check_color = $accent
-      fail_color = $red
-      fail_text = <i>$FAIL <b>($ATTEMPTS)</b></i>
-      capslock_color = $yellow
-      position = 0, -100
-      halign = center
-      valign = center
+        monitor =
+        size = 6%, 4%
+        outline_thickness = 0
+        dots_rounding = 4
+        dots_spacing = .5
+        dots_fase_time = 300
+        inner_color = $backgroundCol
+        outer_color = $backgroundCol $backgroundCol
+        check_color= $backgroundCol $backgroundCol
+        fail_color= $backgroundCol $backgroundCol
+        font_color = $color9
+        font_family = CodeNewRoman Nerd Font Propo
+        fade_on_empty = false
+        shadow_color = rgba(0,0,0,0.5)
+        shadow_passes = 2
+        shadow_size = 2
+        rounding = 20
+        placeholder_text = <i></i>
+        fail_text = <b>FAIL</b>
+        fail_timeout = 300
+        position = 0, -100
+        halign = center
+        valign = center
+    }
+    label {
+        monitor =
+        text = cmd[update:1000] date +"<b>%I</b>"
+        color = $color9
+        font_size = 200
+        font_family = CodeNewRoman Nerd Font Propo
+        shadow_passes = 0
+        shadow_size = 5
+        position = -120, 410
+        halign = center
+        valign = center
+    }
+
+
+    label {
+        monitor =
+        text = cmd[update:1000] date +"<b>%M</b>"
+        color = rgba(150,150,150, .4)
+        font_size = 200
+        font_family = CodeNewRoman Nerd Font Propo
+        shadow_passes = 0
+        shadow_size = 5
+        position = 120, 230
+        halign = center
+        valign = center
+    }
+    label {
+        monitor =
+        text = cmd[update:1000] date +"<b>%A, %B %d, %Y</b>"
+        color = $color4
+        font_size = 40
+        font_family = CodeNewRoman Nerd Font Propo
+        shadow_passes = 0
+        shadow_size = 4
+        position = -40,-20
+        halign = right
+        valign = top
+    }
+    label {
+        monitor =
+        text = <i>Hello</i> <b>$USER</b>
+        color = $color5 
+        font_size = 40
+        font_family = CodeNewRoman Nerd Font Propo
+        shadow_passes = 0
+        shadow_size = 4
+        position = 40,-20
+        halign = left
+        valign = top
     }
   '';
 }

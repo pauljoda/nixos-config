@@ -86,6 +86,13 @@
         special_scale_factor = 1;
       };
 
+      gestures = {
+        workspace_swipe = true;
+        workspace_swipe_distance = 300;
+        workspace_swipe_cancel_ratio = .05;
+        workspace_swipe_min_speed_to_force = 0;
+       };
+
       decoration = {
         rounding = 10;
         active_opacity = 0.90;
@@ -94,16 +101,16 @@
 
         blur = {
           enabled = true;
-          size = 6;
-          passes = 2;
+          size = 3;
+          passes = 5;
           # size = 4;
           # passes = 2;
-          brightness = 1;
+          brightness = 1.3;
           contrast = 1.400;
           ignore_opacity = true;
           noise = 0;
           new_optimizations = true;
-          xray = true;
+          xray = false;
           popups = true;
         };
 
@@ -112,8 +119,8 @@
 
           ignore_window = true;
           offset = "0 2";
-          range = 20;
-          render_power = 3;
+          range = 15;
+          render_power = 5;
           color = "rgba(00000055)";
         };
       };
