@@ -2,7 +2,7 @@
 
 init() {
     # Vars
-    CURRENT_USERNAME='frostphoenix'
+    CURRENT_USERNAME='paul'
 
     # Colors
     NORMAL=$(tput sgr0)
@@ -30,19 +30,25 @@ confirm() {
 
 print_header() {
     echo -E "$CYAN
-      _____              _   ____  _                      _        
-     |  ___| __ ___  ___| |_|  _ \| |__   ___   ___ _ __ (_)_  __  
-     | |_ | '__/ _ \/ __| __| |_) | '_ \ / _ \ / _ \ '_ \| \ \/ /  
-     |  _|| | | (_) \__ \ |_|  __/| | | | (_) |  __/ | | | |>  <   
-     |_|  |_|  \___/|___/\__|_|   |_| |_|\___/ \___|_| |_|_/_/\_\  
-     _   _ _       ___        ___           _        _ _           
-    | \ | (_)_  __/ _ \ ___  |_ _|_ __  ___| |_ __ _| | | ___ _ __ 
-    |  \| | \ \/ / | | / __|  | || '_ \/ __| __/ _' | | |/ _ \ '__|
-    | |\  | |>  <| |_| \__ \  | || | | \__ \ || (_| | | |  __/ |   
-    |_| \_|_/_/\_\\\\___/|___/ |___|_| |_|___/\__\__,_|_|_|\___|_| 
 
+        _____            _ _           _                                    
+        |  __ \\          | (_)         | |                                   
+        | |__) |_ _ _   _| |_  ___   __| | __ _                              
+        |  ___/ _\` | | | | | |/ _ \\ / _\` |/ _\` |                             
+        | |  | (_| | |_| | | | (_) | (_| | (_| |                             
+        |_|   \\__,_|\\__,_|_| |\\___/ \\__,_|\\__,_|                             
+                        _/ |                                               
+        _   _ _       __|__/ _____   _____           _        _ _           
+        | \\ | (_)     / __ \\ / ____| |_   _|         | |      | | |          
+        |  \\| |___  _| |  | | (___     | |  _ __  ___| |_ __ _| | | ___ _ __ 
+        | . \` | \\ \\/ / |  | |\\___ \\    | | | '_ \\/ __| __/ _\` | | |/ _ \\ '__|
+        | |\\  | |>  <| |__| |____) |  _| |_| | | \\__ \\ || (_| | | |  __/ |   
+        |_| \\_|_/_/\\_\\\\____/|_____/  |_____|_| |_|___/\\__\\__,_|_|_|\\___|_|   
 
-                  $BLUE https://github.com/Frost-Phoenix $RED 
+                        Based on Frost Pheonix's dotfiles                               
+                                                                            
+
+                $BLUE https://github.com/pauljoda/nixos-config $RED 
       ! To make sure everything runs correctly DONT run as root ! $GREEN
                         -> '"./install.sh"' $NORMAL
 
@@ -60,6 +66,7 @@ get_username() {
 set_username() {
     sed -i -e "s/${CURRENT_USERNAME}/${username}/g" ./flake.nix
     sed -i -e "s/${CURRENT_USERNAME}/${username}/g" ./modules/home/audacious/config
+    sed -i -e "s/${CURRENT_USERNAME}/${username}/g" ./modules/home/wofi/style.nix
 }
 
 get_host() {

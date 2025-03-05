@@ -21,6 +21,8 @@
     };
 
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
+
+    swww.url = "github:LGFae/swww";
   
     home-manager = {
       url = "github:nix-community/home-manager";

@@ -6,6 +6,7 @@
       # autostart
       exec-once = [
         "wal i ~/Pictures/wallpapers/wallpaper &"
+        "swww-daemon &"
         "systemctl --user import-environment &"
         "hash dbus-update-activation-environment 2>/dev/null &"
         "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP &"
@@ -19,6 +20,10 @@
         "wl-paste --watch cliphist store &"
         "pypr &"
         "hyprlock"
+      ];
+
+      source = [
+        "/home/$USER/.cache/wal/colors-hyprland"
       ];
 
       input = {
@@ -49,7 +54,7 @@
         gaps_in = 10;
         gaps_out = 10;
         border_size = 2;
-        "col.active_border" = "rgb(cba6f7) rgb(94e2d5) 45deg";
+        "col.active_border" = "$color9";
         "col.inactive_border" = "0x00000000";
         #border_part_of_window = true;
         no_border_on_floating = false;
@@ -153,7 +158,7 @@
         "$mainMod, F, fullscreen, 0"
         "$mainMod SHIFT, F, fullscreen, 1"
         "$mainMod, O, togglefloating,"
-        "$mainMod, SPACE, exec, fuzzel"
+        "$mainMod, SPACE, exec, wofi --show drun -n"
         "$mainMod SHIFT, D, exec, hyprctl dispatch exec '[workspace 4 silent] discord --enable-features=UseOzonePlatform --ozone-platform=wayland'"
         "$mainMod SHIFT, S, exec, hyprctl dispatch exec '[workspace 5 silent] SoundWireServer'"
         "$mainMod, Escape, exec, swaylock"
@@ -163,7 +168,7 @@
         "$mainMod, E, exec, nautilus"
         "$mainMod SHIFT, B, exec, pkill -SIGUSR1 .waybar-wrapped"
         "$mainMod, C ,exec, hyprpicker -a"
-        "$mainMod, W,exec, wallpaper-picker"
+        "$mainMod, W,exec, wallpaper"
         "$mainMod SHIFT, W, exec, vm-start"
 
         # screenshot
@@ -258,9 +263,6 @@
         "size 950 600,title:^(float_ghostty)$"
         "float,audacious"
         "workspace 8 silent, audacious"
-        # "pin,wofi"
-        # "float,wofi"
-        # "noborder,wofi"
         "tile, neovide"
         "idleinhibit focus,mpv"
         "float,udiskie"
@@ -270,6 +272,12 @@
         "move 0 0,title:^(Firefox — Sharing Indicator)$"
         "size 700 450,title:^(Volume Control)$"
         "move 40 55%,title:^(Volume Control)$"
+      ];
+
+      layerrule = [
+        "blur,wofi"
+        "ignorezero, wofi"
+        "ignorealpha 0.5, wofi"
       ];
 
       # windowrulev2

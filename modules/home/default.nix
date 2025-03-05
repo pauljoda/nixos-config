@@ -25,6 +25,7 @@
     ./swaylock.nix                  # lock screen
     ./vscode.nix                    # vscode fork
     ./waybar                        # status bar
+    ./wofi
     ./xdg-mimes.nix
     ./zsh                           # shell
   ];
