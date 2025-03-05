@@ -12,7 +12,6 @@
     modules-left = [
         "custom/notification"
         "clock"
-        "custom/pacman"
         "tray"
     ];
     modules-center = [
@@ -20,8 +19,6 @@
     ];
     modules-right = [
         "group/expand"
-        "bluetooth"
-        "network"
         "battery"
     ];
 

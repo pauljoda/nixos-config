@@ -278,6 +278,9 @@
         "blur,wofi"
         "ignorezero, wofi"
         "ignorealpha 0.5, wofi"
+        "blur,waybar"
+        "ignorezero, waybar"
+        "ignorealpha 0.5, waybar"
       ];
 
       # windowrulev2
