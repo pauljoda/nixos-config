@@ -12,96 +12,172 @@ let custom = {
 in 
 {
   programs.waybar.style = ''
+@import url('../../.cache/wal/colors-waybar.css');
 
-    * {
-        border: none;
-        border-radius: 0px;
-        padding: 0;
-        margin: 0;
-        min-height: 0px;
-        font-family: ${custom.font};
-        font-weight: ${custom.font_weight};
-        opacity: ${custom.opacity};
-    }
+* {
+    font-size:15px;
+    font-family: "CodeNewRoman Nerd Font Propo";
+}
+window#waybar{
+    all:unset;
+}
+.modules-left {
+    padding:7px;
+    margin:10 0 5 10;
+    border-radius:10px;
+    background: alpha(@background,.6);
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, .6);
+}
+.modules-center {
+    padding:7px;
+    margin:10 0 5 0;
+    border-radius:10px;
+    background: alpha(@background,.6);
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, .6);
+}
+.modules-right {
+    padding:7px;
+    margin: 10 10 5 0;
+    border-radius:10px;
+    background: alpha(@background,.6);
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, .6);
+}
+tooltip {
+    background:@background;
+    color: @color7;
+}
+#clock:hover, #custom-pacman:hover, #custom-notification:hover,#bluetooth:hover,#network:hover,#battery:hover, #cpu:hover,#memory:hover,#temperature:hover{
+    transition: all .3s ease;
+    color:@color9;
+}
+#custom-notification {
+    padding: 0px 5px;
+    transition: all .3s ease;
+    color:@color7;
+}
+#clock{
+    padding: 0px 5px;
+    color:@color7;
+    transition: all .3s ease;
+}
+#custom-pacman{
+    padding: 0px 5px;
+    transition: all .3s ease;
+    color:@color7;
 
-    window#waybar {
-        background: none;
-    }
+}
+#workspaces {
+    padding: 0px 5px;
+}
+#workspaces button {
+    all:unset;
+    padding: 0px 5px;
+    color: alpha(@color9,.4);
+    transition: all .2s ease;
+}
+#workspaces button:hover {
+    color:rgba(0,0,0,0);
+    border: none;
+    text-shadow: 0px 0px 1.5px rgba(0, 0, 0, .5);
+    transition: all 1s ease;
+}
+#workspaces button.active {
+    color: @color9;
+    border: none;
+    text-shadow: 0px 0px 2px rgba(0, 0, 0, .5);
+}
+#workspaces button.empty {
+    color: rgba(0,0,0,0);
+    border: none;
+    text-shadow: 0px 0px 1.5px rgba(0, 0, 0, .2);
+}
+#workspaces button.empty:hover {
+    color: rgba(0,0,0,0);
+    border: none;
+    text-shadow: 0px 0px 1.5px rgba(0, 0, 0, .5);
+    transition: all 1s ease;
+}
+#workspaces button.empty.active {
+    color: @color9;
+    border: none;
+    text-shadow: 0px 0px 2px rgba(0, 0, 0, .5);
+}
+#bluetooth{
+    padding: 0px 5px;
+    transition: all .3s ease;
+    color:@color7;
 
-    #workspaces {
-        font-size: 18px;
-        padding-left: 15px;
-        
-    }
-    #workspaces button {
-        color: ${custom.text_color};
-        padding-left:  6px;
-        padding-right: 6px;
-    }
-    #workspaces button.empty {
-        color: #6c7086;
-    }
-    #workspaces button.active {
-        color: #b4befe;
-    }
+}
+#network{
+    padding: 0px 5px;
+    transition: all .3s ease;
+    color:@color7;
 
-    #tray, #pulseaudio, #network, #cpu, #memory, #disk, #clock, #battery, #custom-notification {
-        font-size: ${custom.font_size};
-        color: ${custom.text_color};
-    }
+}
+#battery{
+    padding: 0px 5px;
+    transition: all .3s ease;
+    color:@color7;
 
-    #cpu {
-        padding-left: 15px;
-        padding-right: 9px;
-        margin-left: 7px;
-        color: @green;
-    }
-    #memory {
-        padding-left: 9px;
-        padding-right: 9px;
-        color: @sky;
-    }
-    #disk {
-        padding-left: 9px;
-        padding-right: 15px;
-        color: @sapphire;
-    }
 
-    #tray {
-        padding: 0 20px;
-        margin-left: 7px;
-    }
+}
+#battery.charging {
+    color: #26A65B;
+}
 
-    #pulseaudio {
-        padding-left: 15px;
-        padding-right: 9px;
-        margin-left: 7px;
-    }
-    #battery {
-        padding-left: 9px;
-        padding-right: 9px;
-    }
-    #network {
-        padding-left: 9px;
-        padding-right: 30px;
-    }
+#battery.warning:not(.charging) {
+    color: #ffbe61;
+}
 
-    custom-notification {
-        padding-left: 20px;
-        padding-right: 20px;
-    }
-    
-    #clock {
-        padding-left: 9px;
-        padding-right: 15px;
-    }
+#battery.critical:not(.charging) {
+    color: #f53c3c;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+#group-expand{
+    padding: 0px 5px;
+    transition: all .3s ease; 
+}
+#custom-expand{
+    padding: 0px 5px;
+    color:alpha(@foreground,.2);
+    text-shadow: 0px 0px 2px rgba(0, 0, 0, .7);
+    transition: all .3s ease; 
+}
+#custom-expand:hover{
+    color:rgba(255,255,255,.2);
+    text-shadow: 0px 0px 2px rgba(255, 255, 255, .5);
+}
+#custom-colorpicker{
+    padding: 0px 5px;
+}
+#cpu,#memory,#temperature{
+    padding: 0px 5px;
+    transition: all .3s ease; 
+    color:@color7;
 
-    #custom-launcher {
-        font-size: 20px;
-        color: #b4befe;
-        font-weight: ${custom.font_weight};
-        padding-left: 10px;
-        padding-right: 15px;
-    }
+}
+#custom-endpoint{
+    color:transparent;
+    text-shadow: 0px 0px 1.5px rgba(0, 0, 0, 1);
+
+}
+#tray{
+    padding: 0px 5px;
+    transition: all .3s ease; 
+
+}
+#tray menu * {
+    padding: 0px 5px;
+    transition: all .3s ease; 
+}
+
+#tray menu separator {
+    padding: 0px 5px;
+    transition: all .3s ease; 
+}
   '';
 }

@@ -17,6 +17,7 @@
     ./micro.nix                     # nano replacement
     ./nvim.nix                      # neovim editor
     ./packages.nix                  # other packages
+    ./pywal
     ./retroarch.nix
     ./scripts/scripts.nix           # personal scripts
     ./starship                  # shell prompt

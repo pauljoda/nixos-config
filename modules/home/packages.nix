@@ -14,6 +14,7 @@ in
     entr                              # A utility to run arbitrary commands when files change
     fd                                # A simple, fast and user-friendly alternative to find
     file                              # A command-line utility to determine file types
+    file-roller                       # An archive manager for the GNOME desktop environment
     fzf                               # A general-purpose command-line fuzzy finder
     gtt                               # A terminal user interface for Google Translate
     gifsicle                          # A command-line tool for creating, editing, and getting information about GIF images and animations
