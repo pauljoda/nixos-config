@@ -8,11 +8,13 @@
         "scratchpads",
         "magnify",
         ]
-
+        
         [scratchpads.term]
         animation = "fromTop"
-        command = "ghostty --class kitty-dropterm"
-        class = "kitty-dropterm"
+        command = "ghostty"
+        class = "com.mitchellh.ghostty"
+        unfocus = "hide"
+        lazy = true
         size = "75% 60%"
   '';
 }
