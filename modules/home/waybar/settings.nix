@@ -10,6 +10,7 @@
     margin-left= 0;
     margin-right= 0;
     modules-left = [
+        # "custom/launcher"
         "custom/notification"
         "clock"
         "tray"
@@ -133,8 +134,8 @@
 
     "custom/launcher"= {
         format= "";
-        on-click= "fuzzel";
-        on-click-right= "wallpaper-picker"; 
+        on-click= "wofi";
+        on-click-right= "wallpaper"; 
         tooltip= "false";
     };
 

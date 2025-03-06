@@ -7,6 +7,12 @@
 {
   home.packages = (with pkgs; [
     inputs.zen-browser.packages."${system}".default
-    # pkgs.librewolf
+    firefoxpwa
   ]);
+
+  programs.firefox = {
+    enable = true;
+    package = pkgs.firefox;
+    nativeMessagingHosts = [ pkgs.firefoxpwa ];
+  };
 }

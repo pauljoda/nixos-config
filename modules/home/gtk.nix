@@ -19,20 +19,25 @@
       size = 11;
     };
     iconTheme = {
-      name = "Papirus-Dark";
-      package = pkgs.catppuccin-papirus-folders.override {
-        flavor = "mocha";
-        accent = "lavender";
-      };
+      name = "WhiteSur";
+      package = pkgs.whitesur-icon-theme;
     };
     theme = {
-      name = "Dracula";
-      package = pkgs.dracula-theme;
+      name = "WhiteSur";
+      package = pkgs.whitesur-gtk-theme.override {
+        colorVariants = [ "dark" ];
+      };
     };
     cursorTheme = {
       name = "Bibata-Modern-Ice";
       package = pkgs.bibata-cursors;
       size = 22;
+    };
+  };
+
+  dconf.settings = {
+    "org/gnome/desktop/interface" = {
+      color-scheme = "prefer-dark";
     };
   };
   
