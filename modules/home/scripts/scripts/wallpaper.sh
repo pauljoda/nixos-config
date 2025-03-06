@@ -19,5 +19,6 @@ main() {
     sed -i "s/^gradient_color_2 = .*/gradient_color_2 = '$color2'/" $cava_config
     pkill -USR2 cava 2>/dev/null
     source ~/.cache/wal/colors.sh && cp -r $wallpaper "$HOME/Pictures/nixos.png"
+    hyprctl reload
 }
 main

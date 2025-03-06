@@ -1,27 +1,25 @@
 {
-    "wallpaper": "/home/eli/wallpapers/pywallpaper.jpg",
-    "alpha": "100",
     "special": {
-        "background": "#001E23",
-        "foreground": "#b4c8be",
-        "cursor": "#b4c8be"
+        "background": "#272822",
+        "foreground": "#f8f8f2",
+        "cursor": "#f92672"
     },
     "colors": {
-        "color0": "#001E23",
-        "color1": "#4D726B",
-        "color2": "#5C8277",
-        "color3": "#648A7C",
-        "color4": "#77A17E",
-        "color5": "#80A67F",
-        "color6": "#6E9485",
-        "color7": "#b4c8be",
-        "color8": "#7d8c85",
-        "color9": "#4D726B",
-        "color10": "#5C8277",
-        "color11": "#648A7C",
-        "color12": "#77A17E",
-        "color13": "#80A67F",
-        "color14": "#6E9485",
-        "color15": "#b4c8be"
+        "color0": "#272822",
+        "color1": "#f92672",
+        "color2": "#a6e22e",
+        "color3": "#f4bf75",
+        "color4": "#66d9ef",
+        "color5": "#ae81ff",
+        "color6": "#a1efe4",
+        "color7": "#f8f8f2",
+        "color8": "#75715e",
+        "color9": "#f92672",
+        "color10": "#a6e22e",
+        "color11": "#f4bf75",
+        "color12": "#66d9ef",
+        "color13": "#ae81ff",
+        "color14": "#a1efe4",
+        "color15": "#f9f8f5"
     }
 }

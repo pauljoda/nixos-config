@@ -161,6 +161,7 @@
         "$mainMod, Return, exec, ghostty"
         "ALT, Return, exec, [float; size 1111 700] ghostty"
         "$mainMod, B, exec, zen"
+        "$mainMod, V, exec, code"
         "$mainMod, Q, killactive,"
         "$mainMod, F, fullscreen, 0"
         "$mainMod SHIFT, F, fullscreen, 1"
@@ -172,7 +173,7 @@
         "$mainMod SHIFT, Escape, exec, shutdown-script"
         "$mainMod, P, pseudo,"
         "$mainMod, J, togglesplit,"
-        "$mainMod, E, exec, nautilus"
+        "$mainMod, E, exec, ghostty -e yazi"
         "$mainMod SHIFT, B, exec, pkill -SIGUSR1 .waybar-wrapped"
         "$mainMod, C ,exec, hyprpicker -a"
         "$mainMod, W,exec, wallpaper"
@@ -247,7 +248,7 @@
         "$mainMod, XF86MonBrightnessDown, exec, brightnessctl set 100%-"
 
         # clipboard manager
-        "$mainMod, V, exec, cliphist list | fuzzel --dmenu | cliphist decode | wl-copy"
+        "ALT, V, exec, cliphist list | wofi --width 1000 -d -n | cliphist decode | wl-copy"
       ];
 
       # mouse binding
