@@ -27,6 +27,7 @@ in
     nautilus                          # The default file manager for the GNOME desktop environment
     nitch                             # A system information fetch utility
     nix-prefetch-github               # A tool to fetch and hash the contents of a GitHub repository
+    nwg-look
     pipes                             # A terminal screensaver that draws random pipes
     prismlauncher                     # A custom launcher for Minecraft
     ripgrep                           # A line-oriented search tool that recursively searches your current directory for a regex pattern

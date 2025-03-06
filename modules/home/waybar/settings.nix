@@ -13,12 +13,14 @@
         "custom/notification"
         "clock"
         "tray"
+        "hyprland/window"
     ];
     modules-center = [
         "hyprland/workspaces"
     ];
     modules-right = [
         "group/expand"
+        "pulseaudio"
         "battery"
     ];
 
@@ -52,6 +54,10 @@
         persistent-workspaces = {
             "*" = [ 1 2 3 4 5 ];
         };
+    };
+
+    "hyprland/window" = {
+        format = "<span font='9' rise='-4444'>{}</span>";
     };
 
     memory= {
@@ -96,6 +102,7 @@
         };
         scroll-step= 5;
         on-click= "pamixer -t";
+        on-click-right = "pavucontrol";
     };
 
     battery = {
