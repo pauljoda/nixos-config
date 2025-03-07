@@ -13,7 +13,6 @@
     }
     input-field {
         monitor =
-        size = 6%, 4%
         outline_thickness = 0
         dots_rounding = 4
         dots_spacing = .5

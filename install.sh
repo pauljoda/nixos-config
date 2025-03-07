@@ -67,6 +67,7 @@ set_username() {
     sed -i -e "s/${CURRENT_USERNAME}/${username}/g" ./flake.nix
     sed -i -e "s/${CURRENT_USERNAME}/${username}/g" ./modules/home/audacious/config
     sed -i -e "s/${CURRENT_USERNAME}/${username}/g" ./modules/home/wofi/style.nix
+    sed -i -e "s/${CURRENT_USERNAME}/${username}/g" ./modules/home/ghostty.nix
 }
 
 get_host() {

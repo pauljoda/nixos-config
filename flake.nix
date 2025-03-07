@@ -10,8 +10,6 @@
   
     alejandra.url = "github:kamadorueda/alejandra/3.0.0";
   
-    nix-gaming.url = "github:fufexan/nix-gaming";
-
     nix-flatpak.url = "github:gmodena/nix-flatpak";
   
     hyprland = {
@@ -27,15 +25,6 @@
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    catppuccin-bat = {
-      url = "github:catppuccin/bat";
-      flake = false;
-    };
-    catppuccin-cava = {
-      url = "github:catppuccin/cava";
-      flake = false;
     };
   };
 

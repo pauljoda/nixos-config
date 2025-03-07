@@ -32,9 +32,9 @@
       tree = "eza --icons --tree --group-directories-first";
 
       # Nixos
-      cdnix = "cd ~/nixos-config && codium ~/nixos-config";
+      cdnix = "cd ~/nixos-config";
       ns = "nom-shell --run zsh";
-      nix-switch = "nh os switch";
+      nix-switch = "(cd ~/nixos-config && git add .) && nh os switch";   
       nix-update = "nh os switch --update";
       nix-clean = "nh clean all --keep 5";
       nix-search = "nh search";

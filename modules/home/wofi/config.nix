@@ -11,7 +11,7 @@
     show=drun
     prompt=Search
     height=400
-    term=kitty
+    term=ghostty
     hide_scroll=true
     print_command=true
     insensitive=true
@@ -28,7 +28,7 @@
     height=600
     always_parse_args=true
     show_all=true
-    term=kitty
+    term=ghostty
     hide_scroll=true
     print_command=true
     insensitive=true
@@ -45,7 +45,7 @@
     height=600
     always_parse_args=true
     show_all=true
-    term=kitty
+    term=ghostty
     hide_scroll=true
     print_command=true
     insensitive=true

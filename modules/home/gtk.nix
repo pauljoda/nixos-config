@@ -23,7 +23,7 @@
       package = pkgs.whitesur-icon-theme;
     };
     theme = {
-      name = "WhiteSur";
+      name = "WhiteSur-Dark";
       package = pkgs.whitesur-gtk-theme.override {
         colorVariants = [ "dark" ];
       };
@@ -32,6 +32,13 @@
       name = "Bibata-Modern-Ice";
       package = pkgs.bibata-cursors;
       size = 22;
+    };
+
+    gtk3.extraConfig = {
+      gtk-application-prefer-dark-theme = 1;
+    };
+    gtk4.extraConfig = {
+      gtk-application-prefer-dark-theme = 1;
     };
   };
 

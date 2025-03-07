@@ -96,7 +96,7 @@
     }
     #entry:selected {
         box-shadow: 1px 1px 5px rgba(255,255,255, .03);
-        border: none;
+        border: @color7;
         border-radius: 20px;
         background-color:transparent;
     }

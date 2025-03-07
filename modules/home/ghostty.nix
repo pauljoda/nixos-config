@@ -20,7 +20,7 @@
     adjust-box-thickness = 1
 
     # Theme
-    theme = "catppuccin-mocha"
+    theme = "/home/paul/.cache/wal/colors-ghostty"
     background-opacity = 0.66
 
     cursor-style = bar

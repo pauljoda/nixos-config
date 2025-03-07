@@ -161,7 +161,7 @@
         "$mainMod, Return, exec, ghostty"
         "ALT, Return, exec, [float; size 1111 700] ghostty"
         "$mainMod, B, exec, zen"
-        "$mainMod, V, exec, 'code --enable-features=UseOzonePlatform --ozone-platform=wayland'"
+        "$mainMod, V, exec, code --enable-features=UseOzonePlatform --ozone-platform=wayland"
         "$mainMod, Q, killactive,"
         "$mainMod, F, fullscreen, 0"
         "$mainMod SHIFT, F, fullscreen, 1"
@@ -169,7 +169,7 @@
         "$mainMod, SPACE, exec, wofi --show drun -n"
         "$mainMod SHIFT, D, exec, hyprctl dispatch exec '[workspace 4 silent] discord --enable-features=UseOzonePlatform --ozone-platform=wayland'"
         "$mainMod SHIFT, S, exec, hyprctl dispatch exec '[workspace 5 silent] SoundWireServer'"
-        "$mainMod, Escape, exec, swaylock"
+        "$mainMod, Escape, exec, hyprlock"
         "$mainMod SHIFT, Escape, exec, shutdown-script"
         "$mainMod, P, pseudo,"
         "$mainMod, J, togglesplit,"
@@ -180,8 +180,8 @@
         "$mainMod SHIFT, W, exec, vm-start"
 
         # screenshot
-        "$mainMod, Print, exec, grimblast --notify --cursor --freeze save area ~/Pictures/$(date +'%Y-%m-%d-At-%Ih%Mm%Ss').png"
-        ",Print, exec, grimblast --notify --cursor --freeze copy area"
+        "$mainMod, Print, exec, grimblast --notify --freeze save area ~/Pictures/$(date +'%Y-%m-%d-At-%Ih%Mm%Ss').png"
+        ",Print, exec, grimblast --notify --freeze copy area"
 
         # switch focus
         "$mainMod, left, movefocus, l"
@@ -264,7 +264,6 @@
         "size 1200 725,imv"
         "float,mpv"
         "center,mpv"
-        "tile,Aseprite"
         "size 1200 725,mpv"
         "float,title:^(float_ghostty)$"
         "center,title:^(float_ghostty)$"
@@ -298,8 +297,6 @@
         "pin, title:^(Picture-in-Picture)$"
         "opacity 1.0 override 1.0 override, title:^(.*imv.*)$"
         "opacity 1.0 override 1.0 override, title:^(.*mpv.*)$"
-        "opacity 1.0 override 1.0 override, class:(Aseprite)"
-        "opacity 1.0 override 1.0 override, class:(Unity)"
         "idleinhibit focus, class:^(mpv)$"
         "idleinhibit fullscreen, class:^(firefox)$"
         "float,class:^(zenity)$"

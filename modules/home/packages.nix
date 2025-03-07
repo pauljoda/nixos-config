@@ -1,11 +1,6 @@
 { inputs, pkgs, ... }: 
-let 
-  _2048 = pkgs.callPackage ../../pkgs/2048/default.nix {}; 
-in
 {
-  home.packages = (with pkgs; [
-    _2048                             # A terminal-based version of the popular 2048 game
-    
+  home.packages = (with pkgs; [    
     audacity                          # A free, open-source, cross-platform audio software for multi-track recording and editing
     bitwise                           # A command-line tool for bit and hex manipulation
     cbonsai                           # A terminal screensaver that displays a growing bonsai tree
