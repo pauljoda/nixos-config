@@ -58,7 +58,7 @@
 
    ```
    nix-shell -p git
-   git clone https://github.com/Frost-Phoenix/nixos-config
+   git clone https://github.com/pauljoda/nixos-config
    cd nixos-config
    ```
 3. **Install script**
@@ -73,8 +73,8 @@
    ```
       programs.git = {
          ...
-         userName = "Frost-Phoenix";
-         userEmail = "67cyril6767@gmail.com";
+         userName = "USER";
+         userEmail = "USER@gmail.com";
          ...
       };
    ```
