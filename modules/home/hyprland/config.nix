@@ -1,8 +1,6 @@
-{ ... }: 
-{
+{...}: {
   wayland.windowManager.hyprland = {
     settings = {
-      
       # autostart
       exec-once = [
         "wal i ~/Pictures/wallpapers/wallpaper &"
@@ -28,7 +26,7 @@
 
       input = {
         kb_layout = "us";
-        kb_options ="grp:alt_caps_toggle"; 
+        kb_options = "grp:alt_caps_toggle";
         numlock_by_default = true;
         follow_mouse = 1;
         sensitivity = 0;
@@ -91,7 +89,7 @@
         workspace_swipe_distance = 300;
         workspace_swipe_cancel_ratio = .05;
         workspace_swipe_min_speed_to_force = 0;
-       };
+      };
 
       decoration = {
         rounding = 10;
@@ -160,8 +158,8 @@
         # keybindings
         "$mainMod, Return, exec, ghostty"
         "ALT, Return, exec, [float; size 1111 700] ghostty"
-        "$mainMod, B, exec, zen"
-        "$mainMod, V, exec, code --enable-features=UseOzonePlatform --ozone-platform=wayland"
+        "$mainMod, B, exec, [workspace 1] zen"
+        "$mainMod, V, exec, [workspace 2] code --enable-features=UseOzonePlatform --ozone-platform=wayland"
         "$mainMod, Q, killactive,"
         "$mainMod, F, fullscreen, 0"
         "$mainMod SHIFT, F, fullscreen, 1"
@@ -228,7 +226,11 @@
         "$mainMod ALT, up, moveactive, 0 -80"
         "$mainMod ALT, down, moveactive, 0 80"
 
-        "$mainMod SHIFT, Return, exec, pypr toggle term" # Dropdown terminal not avail Debian and Ubuntu
+        # Hyprtasking
+        "$mainMod, tab, hyprtasking:toggle, cursor"
+
+        # Dropdown terminal
+        "$mainMod SHIFT, Return, exec, pypr toggle term"
 
         # media and volume controls
         ",XF86AudioRaiseVolume,exec, pamixer -i 2"
@@ -323,7 +325,6 @@
         "maxsize 1 1,class:^(xwaylandvideobridge)$"
         "noblur,class:^(xwaylandvideobridge)$"
       ];
-
     };
 
     extraConfig = "

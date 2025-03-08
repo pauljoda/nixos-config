@@ -32,7 +32,7 @@ up=$(sed -e "s/ m/m/g" <<< ${up})
 pkgs=$(nix-store --query --requisites /run/current-system | wc -l)
 
 fetch() {
-    echo "${cyan}$(tput bold)___           _    ___  ___ ${normal}$(tput sgr0)"
+    echo "${cyan}$(tput bold) ___           _    ___  ___ ${normal}$(tput sgr0)"
     echo "${cyan}$(tput bold)| _ \__ _ _  _| |  / _ \/ __|${normal}$(tput sgr0)"
     echo "${cyan}$(tput bold)|  _/ _\` | || | | | (_) \__ \\${normal}$(tput sgr0)"
     echo "${cyan}$(tput bold)|_| \__,_|\_,_|_|  \___/|___/${normal}$(tput sgr0)"

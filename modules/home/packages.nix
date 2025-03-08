@@ -1,7 +1,6 @@
 { inputs, pkgs, ... }: 
 {
   home.packages = (with pkgs; [    
-    audacity                          # A free, open-source, cross-platform audio software for multi-track recording and editing
     bitwise                           # A command-line tool for bit and hex manipulation
     cbonsai                           # A terminal screensaver that displays a growing bonsai tree
     evince                            # A document viewer for multiple document formats (PDF, Postscript, djvu, tiff, dvi, XPS, SyncTex support with gedit, comics books (cbr, cbz, cb7 and cbt))
@@ -22,9 +21,8 @@
     nautilus                          # The default file manager for the GNOME desktop environment
     nitch                             # A system information fetch utility
     nix-prefetch-github               # A tool to fetch and hash the contents of a GitHub repository
-    nwg-look
+    nwg-look                          # View and modify gtk themes
     pipes                             # A terminal screensaver that draws random pipes
-    prismlauncher                     # A custom launcher for Minecraft
     ripgrep                           # A line-oriented search tool that recursively searches your current directory for a regex pattern
     soundwireserver                   # A server application to stream audio to an Android device
     tdf                               # A command-line PDF viewer
@@ -64,7 +62,7 @@
     qalculate-gtk                     # A powerful and easy-to-use desktop calculator
     unzip                             # A utility to extract files from ZIP archives
     wget                              # A network utility to retrieve files from the web
-    inputs.swww.packages.${system}.swww
+    inputs.swww.packages.${system}.swww  # Wallpaper tool
     xdg-utils                         # A set of command-line tools that assist applications with a variety of desktop integration tasks
     xxd                               # A command-line utility to create a hex dump of a given file or standard input
     inputs.alejandra.defaultPackage.${system} # Alejandra, a Nix code formatter
