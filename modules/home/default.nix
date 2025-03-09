@@ -24,6 +24,7 @@
     ./starship # shell prompt
     ./vscode.nix # vscode fork
     ./waybar # status bar
+    ./wlogout # logout menu
     ./wofi
     ./xdg-mimes.nix
     ./zsh # shell

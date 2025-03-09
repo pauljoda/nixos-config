@@ -20,6 +20,7 @@
     gtrash # A command-line tool to move files to the trash instead of deleting them
     hexdump # A command-line utility to display file contents in hexadecimal
     jdk17 # Java Development Kit version 17
+    jq # A lightweight and flexible command-line JSON processor
     lazygit # A simple terminal UI for git commands
     libreoffice # A free and open-source office suite
     nautilus # The default file manager for the GNOME desktop environment
