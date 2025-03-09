@@ -31,7 +31,7 @@
       "tooltip-format" = "{title}";
       "on-click" = "activate";
       "on-click-middle" = "close";
-      "ignore-list" = [".ghostty-wrapped" "ghostty" "kitty"];
+      "ignore-list" = ["com.mitchellh.ghostty" "ghostty" "kitty"];
       rewrite = {
         "Zen Browser" = "Zen";
       };
@@ -141,9 +141,9 @@
         "dnd-notification" = "<span foreground='red'><sup></sup></span>";
         "dnd-none" = "";
         "inhibited-notification" = "<span foreground='red'><sup></sup></span>";
-        "inhibited-none" = "";
+        "inhibited-none" = "!";
         "dnd-inhibited-notification" = "<span foreground='red'><sup></sup></span>";
-        "dnd-inhibited-none" = "";
+        "dnd-inhibited-none" = "!";
       };
       "return-type" = "json";
       "exec-if" = "which swaync-client";
