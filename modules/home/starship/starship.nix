@@ -1,5 +1,9 @@
-{ lib, inputs, ... }:
 {
+  lib,
+  inputs,
+  config,
+  ...
+}: {
   programs.starship = {
     enable = true;
 
@@ -9,13 +13,13 @@
 
     settings = {
       format = lib.concatStrings [
-        "[](fg:blue)"
+        "[](fg:#${config.lib.stylix.colors.base0D-hex})"
         "$os"
-        "[](bg:blue fg:red)"
+        "[](bg:#${config.lib.stylix.colors.base0D-hex} fg:#${config.lib.stylix.colors.base08-hex})"
         "$username"
-        "[](bg:red fg:green)"
+        "[](bg:#${config.lib.stylix.colors.base08-hex} fg:#${config.lib.stylix.colors.base0B-hex})"
         "$directory"
-        "[ ](fg:green)"
+        "[ ](fg:#${config.lib.stylix.colors.base0B-hex})"
         "$git_branch"
         "$git_status"
         "$all"
@@ -24,13 +28,13 @@
 
       username = {
         show_always = true;
-        format = "[$user ](bg:red fg:black)";
+        format = "[$user ](bg:#${config.lib.stylix.colors.base08-hex} fg:black)";
         disabled = false;
       };
 
       os = {
         disabled = false;
-        style = "bg:blue fg:black";
+        style = "bg:#${config.lib.stylix.colors.base0D-hex} fg:black";
         symbols = {
           Alpaquita = " ";
           Alpine = " ";
@@ -81,11 +85,11 @@
       };
 
       cmd_duration = {
-        format = "[$duration](fg:red)";
+        format = "[$duration](fg:#${config.lib.stylix.colors.base08-hex})";
       };
 
       directory = {
-        format = "[$path](bg:green fg:black)";
+        format = "[$path](bg:#${config.lib.stylix.colors.base0B-hex} fg:black)";
         truncation_length = 2;
         truncation_symbol = "…/";
         substitutions = {
@@ -98,8 +102,8 @@
       };
 
       character = {
-        success_symbol = "[](bold blue)";
-        error_symbol = "[✗](bold red)";
+        success_symbol = "[](bold #${config.lib.stylix.colors.base0D-hex})";
+        error_symbol = "[✗](bold #${config.lib.stylix.colors.base08-hex})";
         disabled = false;
       };
 

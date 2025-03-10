@@ -10,6 +10,8 @@
 
   maxfetch = pkgs.writeScriptBin "maxfetch" (builtins.readFile ./scripts/maxfetch.sh);
 
+  nixtest = pkgs.writeScriptBin "nixtest" (builtins.readFile ./scripts/nixtest.sh);
+
   compress = pkgs.writeScriptBin "compress" (builtins.readFile ./scripts/compress.sh);
   extract = pkgs.writeScriptBin "extract" (builtins.readFile ./scripts/extract.sh);
 
@@ -36,6 +38,8 @@ in {
     toggle_oppacity
 
     maxfetch
+
+    nixtest
 
     compress
     extract

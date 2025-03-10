@@ -1,10 +1,9 @@
-@import url('../../.cache/wal/colors-waybar.css');
-@define-color mpris-album-art-overlay alpha(@background, 0.55);
-@define-color mpris-button-hover alpha(@background, 0.50);
-@define-color text @color15;
-@define-color bg alpha(@background,.8);
-@define-color bg-hover alpha(@background,.8);
-@define-color mycolor @color9;
+@define-color mpris-album-art-overlay alpha(@base00, 0.55);
+@define-color mpris-button-hover alpha(@base00, 0.50);
+@define-color text @base05;
+@define-color bg alpha(@base00,.8);
+@define-color bg-hover alpha(@base00,.8);
+@define-color mycolor @base05;
 @define-color border-color alpha(@mycolor, 0.15);
 
 @keyframes fadeIn{
@@ -278,7 +277,7 @@
 
 .widget-buttons-grid>flowbox>flowboxchild>button label {
     font-size: 20px;
-    color: @color7;
+    color: @base02;
     transition: all .7s ease;
 }
 .widget-buttons-grid>flowbox>flowboxchild>button:hover label {
@@ -294,7 +293,7 @@
     transition: all .5s ease;
 }
 .widget-buttons-grid > flowbox > flowboxchild > button:hover {
-    background: @color4;
+    background: @base02;
     box-shadow: 0px 0px 2px rgba(0, 0, 0, .2);
     transition: all .5s ease;
 
@@ -304,7 +303,7 @@
     background: @mycolor;
 }
 .widget-buttons-grid > flowbox > flowboxchild > button.toggle:checked label {
-    color: @background;
+    color: @base00;
 }
 
 .widget-menubar > box > .menu-button-bar > button {

@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  username,
+  ...
+}: {
   programs.vscode = {
     enable = true;
     package = pkgs.vscode;
@@ -10,10 +14,6 @@
 
       # Remote Login for servers
       ms-vscode-remote.remote-ssh
-
-      # AI
-      github.copilot
-      github.copilot-chat
     ];
   };
 }

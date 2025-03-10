@@ -11,7 +11,6 @@
   };
 in {
   programs.waybar.style = ''
-    @import url('../../.cache/wal/colors-waybar.css');
 
     * {
         font-size:15px;
@@ -24,30 +23,30 @@ in {
         padding:7px;
         margin:10 0 5 10;
         border-radius:10px;
-        background: alpha(@background,.6);
+        background: alpha(@base00,.6);
         box-shadow: 0px 0px 2px rgba(0, 0, 0, .6);
     }
     .modules-center {
         padding:7px;
         margin:10 0 5 0;
         border-radius:10px;
-        background: alpha(@background,.6);
+        background: alpha(@base00,.6);
         box-shadow: 0px 0px 2px rgba(0, 0, 0, .6);
     }
     .modules-right {
         padding:7px;
         margin: 10 10 5 0;
         border-radius:10px;
-        background: alpha(@background,.6);
+        background: alpha(@base00,.6);
         box-shadow: 0px 0px 2px rgba(0, 0, 0, .6);
     }
     tooltip {
-        background:@background;
-        color: @color7;
+        background:@base00;
+        color: @base01;
     }
     #clock:hover,#custom-exit:hover, #custom-pacman:hover, #custom-notification:hover,#bluetooth:hover, #network:hover, #battery:hover, #cpu:hover,#memory:hover,#temperature:hover{
         transition: all .3s ease;
-        color:@color9;
+        color:@base04;
     }
     #wlr-taskbar{
         padding: 10px;
@@ -55,20 +54,21 @@ in {
     #custom-notification {
         padding: 0px 5px;
         transition: all .3s ease;
-        color:@color7;
+        color:@base05;
     }
     #clock{
         padding: 0px 5px;
-        color:@color7;
+        color:@base05;
         transition: all .3s ease;
     }
     #workspaces, #window {
         padding: 0px 5px;
+        color: @base05;
     }
     #workspaces button {
         all:unset;
         padding: 0px 5px;
-        color: alpha(@color9,.4);
+        color: alpha(@base04,.4);
         transition: all .2s ease;
     }
     #workspaces button:hover {
@@ -78,7 +78,7 @@ in {
         transition: all 1s ease;
     }
     #workspaces button.active {
-        color: @color9;
+        color: @base04;
         border: none;
         text-shadow: 0px 0px 2px rgba(0, 0, 0, .5);
     }
@@ -94,28 +94,26 @@ in {
         transition: all 1s ease;
     }
     #workspaces button.empty.active {
-        color: @color9;
+        color: @base04;
         border: none;
         text-shadow: 0px 0px 2px rgba(0, 0, 0, .5);
     }
     #bluetooth{
         padding: 0px 5px;
         transition: all .3s ease;
-        color:@color7;
+        color:@base05;
 
     }
     #network, #pulseaudio, #custom-exit{
         padding: 0px 5px;
         transition: all .3s ease;
-        color:@color7;
+        color:@base05;
 
     }
     #battery{
         padding: 0px 5px;
         transition: all .3s ease;
-        color:@color7;
-
-
+        color:@base05;
     }
     #battery.charging {
         color: #26A65B;
@@ -153,7 +151,7 @@ in {
     #cpu,#memory,#temperature{
         padding: 0px 5px;
         transition: all .3s ease;
-        color:@color7;
+        color:@base05;
 
     }
     #custom-endpoint{
@@ -163,6 +161,7 @@ in {
     }
     #tray, #custom-launcher{
         padding: 0px 10px;
+        color: @base05;
         transition: all .3s ease;
 
     }

@@ -1,5 +1,8 @@
-{ lib, inputs, ... }:
 {
+  lib,
+  inputs,
+  ...
+}: {
   programs.wofi.enable = true;
 
   # Configs
@@ -34,22 +37,5 @@
     insensitive=true
     columns=4
     image_size=150
-  '';
-
-  # Waybar
-  xdg.configFile."wofi/waybar".text = ''
-    [config]
-    allow_images=true
-    show=drun
-    width=1200
-    height=600
-    always_parse_args=true
-    show_all=true
-    term=ghostty
-    hide_scroll=true
-    print_command=true
-    insensitive=true
-    columns=1
-    image_size=1050
   '';
 }

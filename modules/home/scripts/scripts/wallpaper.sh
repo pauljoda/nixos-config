@@ -8,17 +8,12 @@ main() {
     choice=$(menu | wofi -c ~/.config/wofi/wallpaper -s ~/.config/wofi/style-wallpaper.css --show dmenu --prompt "Select Wallpaper:" -n)
     selected_wallpaper=$(echo "$choice" | sed 's/^img://')
     swww img "$selected_wallpaper" --transition-type any --transition-fps 60 --transition-duration .5
-    wal -i "$selected_wallpaper" -n --cols16 --saturate 0.7
+    cp -r $selected_wallpaper "$HOME/Pictures/nixos.png"
+    cp -r $selected_wallpaper "$HOME/nixos-config/nixos.png"
+    notify-send -t 10000 "Generating Theme..."
+    sudo $HOME/nixos-config/modules/home/scripts/scripts/nixtest.sh $USER
     swaync-client --reload-css
-    cat ~/.cache/wal/colors-kitty.conf > ~/.config/kitty/current-theme.conf
-    pywalfox update
-    color1=$(awk 'match($0, /color2=\47(.*)\47/,a) { print a[1] }' ~/.cache/wal/colors.sh)
-    color2=$(awk 'match($0, /color3=\47(.*)\47/,a) { print a[1] }' ~/.cache/wal/colors.sh)
-    cava_config="$HOME/.config/cava/config"
-    sed -i "s/^gradient_color_1 = .*/gradient_color_1 = '$color1'/" $cava_config
-    sed -i "s/^gradient_color_2 = .*/gradient_color_2 = '$color2'/" $cava_config
-    pkill -USR2 cava 2>/dev/null
-    source ~/.cache/wal/colors.sh && cp -r $wallpaper "$HOME/Pictures/nixos.png"
     hyprctl reload
+    notify-send -t 10000 "Theme set"
 }
 main

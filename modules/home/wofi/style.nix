@@ -1,19 +1,15 @@
-{ lib, inputs, ... }:
 {
+  lib,
+  inputs,
+  ...
+}: {
   xdg.configFile."wofi/style.css".text = ''
-    @import url('/home/paul/.cache/wal/colors-waybar.css');
-
-    @define-color mauve  @color9;
-    @define-color red  @color9;
-    @define-color lavender  @color7;
-    @define-color text  @color7;
     @keyframes fadeIn {
         0% {
         }
         100% {
         }
     }
-
     * {
         all:unset;
         font-family: 'CodeNewRoman Nerd Font Mono', monospace;
@@ -23,19 +19,17 @@
         text-shadow:none;
         background-color:transparent;
     }
-
     window {
         all:unset;
         padding: 20px;
         border-radius: 0px;
-        background-color: alpha(@background,.5);
     }
     #inner-box {
         margin: 2px;
         padding: 5px
         border: none;
     }
-    #outer-box {    
+    #outer-box {
         border: none;
     }
     #scroll {
@@ -51,37 +45,25 @@
         padding: 20px;
         border: none;
         outline: none;
-        color: @text;
         box-shadow: 1px 1px 5px rgba(0,0,0, .5);
         border-radius:10;
-        background-color: alpha(@background,.2);
     }
     #input image {
         border: none;
-        color: @red;
         padding-right:10px;
     }
     #input * {
         border: none;
         outline: none;
     }
-
     #input:focus {
         outline: none;
         border: none;
-
         border-radius:10;
     }
     #text {
         margin: 5px;
         border: none;
-        color: @text;
-        outline: none;
-    }
-    #text {
-        margin: 5px;
-        border: none;
-        color: @text;
         outline: none;
     }
     #entry {
@@ -91,29 +73,14 @@
     }
     #entry arrow {
         border: none;
-        color: @lavender;
-
     }
     #entry:selected {
-        box-shadow: 1px 1px 5px rgba(255,255,255, .03);
-        border: @color7;
+        box-shadow: 1px 1px 5px rgba(255,255,255, .3);
         border-radius: 20px;
-        background-color:transparent;
-    }
-    #entry:selected #text {
-        color: @mauve;
-    }
-    #entry:drop(active) {
-        background-color: @lavender !important;
     }
   '';
 
   xdg.configFile."wofi/style-wallpaper.css".text = ''
-    @import url('/home/paul/.cache/wal/colors-waybar.css');
-    @define-color mauve  @color9;
-    @define-color red  @color9;
-    @define-color lavender  @color7;
-    @define-color text  @color7;
     * {
         all:unset;
         font-family: 'CodeNewRoman Nerd Font Mono', monospace;
@@ -123,12 +90,10 @@
         text-shadow:none;
         background-color:transparent;
     }
-
     window {
         all:unset;
         padding: 20px;
         border-radius: 0px;
-        background-color: alpha(@background,.5);
     }
     #inner-box {
         margin: 2px;
@@ -136,7 +101,7 @@
         border: none;
 
     }
-    #outer-box {    
+    #outer-box {
         border: none;
     }
     #scroll {
@@ -152,31 +117,25 @@
         padding: 20px;
         border: none;
         outline: none;
-        color: @text;
         box-shadow: 1px 1px 5px rgba(0,0,0, .5);
         border-radius:10;
-        background-color: alpha(@background,.2);
     }
     #input image {
         border: none;
-        color: @red;
         padding-right:10px;
     }
     #input * {
         border: none;
         outline: none;
     }
-
     #input:focus {
         outline: none;
         border: none;
-
         border-radius:10;
     }
     #text {
         margin: 5px;
         border: none;
-        color: @text;
         outline: none;
     }
     #entry {
@@ -185,118 +144,11 @@
     }
     #entry arrow {
         border: none;
-        color: @lavender;
 
     }
     #entry:selected {
-        border: none;
+        box-shadow: 1px 1px 5px rgba(255,255,255, .3);
         border-radius: 20px;
-        background-color: alpha(@background,.2);
-    }
-    #entry:selected #text {
-        color: @mauve;
-    }
-    #entry:drop(active) {
-        background-color: @lavender !important;
-    }
-  '';
-
-  xdg.configFile."wofi/style-waybar.css".text = ''
-    @import url('/home/paul/.cache/wal/colors-waybar.css');
-
-    @define-color mauve  @color9;
-    @define-color red  @color9;
-    @define-color lavender  @color7;
-    @define-color text  @color7;
-    @keyframes fadeIn {
-        0% {
-        }
-        100% {
-        }
-    }
-
-    * {
-        all: unset;
-        font-family: 'CodeNewRoman Nerd Font Mono', monospace;
-        font-size: 18px;
-        outline: none;
-        border: none;
-        text-shadow:none;
-        background-color:transparent;
-    }
-
-    window {
-        all:unset;
-        padding: 20px;
-        border-radius: 0px;
-        background-color: alpha(@background,.5);
-    }
-    #inner-box {
-        margin: 2px;
-        padding: 5px
-        border: none;
-    }
-    #outer-box {    
-        border: none;
-    }
-    #scroll {
-        margin: 0px;
-        padding: 30px;
-        border: none;
-    }
-    #input {
-        all:unset;
-        margin-left:20px;
-        margin-right:20px;
-        margin-top:20px;
-        padding: 20px;
-        border: none;
-        outline: none;
-        color: @text;
-        box-shadow: 1px 1px 5px rgba(0, 0, 0, .5);
-        border-radius:10;
-        background-color: alpha(@background,.2);
-    }
-    #input image {
-        border: none;
-        color: @red;
-    }
-    #input * {
-        border: none;
-        outline: none;
-    }
-
-    #input:focus {
-        outline: none;
-        border: none;
-        border-radius:10;
-    }
-    #text {
-        margin: 5px;
-        border: none;
-        color: @text;
-        outline: none;
-    }
-    #entry {
-        border: none;
-        padding: 30;
-    }
-    #entry arrow {
-        border: none;
-        color: @lavender;
-
-    }
-    #entry:selected {
-        padding: 30;
-        border: none;
-        border-radius: 20px;
-        background-color: alpha(@background,.2);
-    }
-    #entry:selected #text {
-        color: @mauve;
-    }
-    #entry:drop(active) {
-        background-color: @lavender !important;
     }
   '';
 }

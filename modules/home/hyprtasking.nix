@@ -2,6 +2,7 @@
 {
   inputs,
   pkgs,
+  config,
   ...
 }: {
   wayland.windowManager.hyprland = {
@@ -15,7 +16,7 @@
           layout = "grid";
 
           gap_size = 2;
-          bg_color = "$color9";
+          bg_color = "0x${config.lib.stylix.colors.base05-hex}ff";
           border_size = 1;
 
           exit_behavior = "hovered";

@@ -1,12 +1,9 @@
-{ pkgs, ... }:
-{
-  home.packages = [ pkgs.hyprlock ];
+{pkgs, username, ...}: {
+  home.packages = [pkgs.hyprlock];
   xdg.configFile."hypr/hyprlock.conf".text = ''
-    source = /home/$USER/.cache/wal/colors-hyprland
-
     background {
         monitor =
-        path = $wallpaper
+        path = "/home/${username}/Pictures/nixos.png"
         blur_size = 5
         blur_passes = 3
         brightness = .6
@@ -17,11 +14,6 @@
         dots_rounding = 4
         dots_spacing = .5
         dots_fase_time = 300
-        inner_color = $backgroundCol
-        outer_color = $backgroundCol $backgroundCol
-        check_color= $backgroundCol $backgroundCol
-        fail_color= $backgroundCol $backgroundCol
-        font_color = $color9
         font_family = CodeNewRoman Nerd Font Propo
         fade_on_empty = false
         shadow_color = rgba(0,0,0,0.5)
@@ -38,7 +30,6 @@
     label {
         monitor =
         text = cmd[update:1000] date +"<b>%I</b>"
-        color = $color9
         font_size = 200
         font_family = CodeNewRoman Nerd Font Propo
         shadow_passes = 0
@@ -48,11 +39,9 @@
         valign = center
     }
 
-
     label {
         monitor =
         text = cmd[update:1000] date +"<b>%M</b>"
-        color = rgba(150,150,150, .4)
         font_size = 200
         font_family = CodeNewRoman Nerd Font Propo
         shadow_passes = 0
@@ -64,7 +53,6 @@
     label {
         monitor =
         text = cmd[update:1000] date +"<b>%A, %B %d, %Y</b>"
-        color = $color4
         font_size = 40
         font_family = CodeNewRoman Nerd Font Propo
         shadow_passes = 0
@@ -76,7 +64,6 @@
     label {
         monitor =
         text = <i>Hello</i> <b>$USER</b>
-        color = $color5 
         font_size = 40
         font_family = CodeNewRoman Nerd Font Propo
         shadow_passes = 0

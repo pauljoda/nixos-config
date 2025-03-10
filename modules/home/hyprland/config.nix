@@ -3,7 +3,6 @@
     settings = {
       # autostart
       exec-once = [
-        "wal i ~/Pictures/wallpapers/wallpaper &"
         "swww-daemon &"
         "systemctl --user import-environment &"
         "hash dbus-update-activation-environment 2>/dev/null &"
@@ -18,10 +17,6 @@
         "wl-paste --watch cliphist store &"
         "pypr &"
         "hyprlock"
-      ];
-
-      source = [
-        "/home/$USER/.cache/wal/colors-hyprland"
       ];
 
       input = {
@@ -52,8 +47,8 @@
         gaps_in = 10;
         gaps_out = 10;
         border_size = 2;
-        "col.active_border" = "$color9";
-        "col.inactive_border" = "0x00000000";
+        #"col.active_border" = "$color9";
+        #"col.inactive_border" = "0x00000000";
         #border_part_of_window = true;
         no_border_on_floating = false;
         resize_on_border = true;
@@ -119,7 +114,7 @@
           offset = "0 2";
           range = 15;
           render_power = 5;
-          color = "rgba(00000055)";
+          #color = "rgba(00000055)";
         };
       };
 

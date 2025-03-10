@@ -19,9 +19,10 @@
     ./swaync/swaync.nix # notification daemon
     ./nvim.nix # neovim editor
     ./packages.nix # other packages
-    ./pywal # Auto Theming
+    #./pywal # Auto Theming
     ./scripts/scripts.nix # personal scripts
     ./starship # shell prompt
+    ./stylix.nix # Coloring
     ./vscode.nix # vscode fork
     ./waybar # status bar
     ./wlogout # logout menu
