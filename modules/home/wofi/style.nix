@@ -1,8 +1,11 @@
 {
   lib,
   inputs,
+  config,
   ...
-}: {
+}: let
+  colors = config.lib.stylix.colors.withHashtag;
+in {
   xdg.configFile."wofi/style.css".text = ''
     @keyframes fadeIn {
         0% {
@@ -17,10 +20,8 @@
         outline: none;
         border: none;
         text-shadow:none;
-        background-color:transparent;
     }
     window {
-        all:unset;
         padding: 20px;
         border-radius: 0px;
     }
@@ -45,8 +46,14 @@
         padding: 20px;
         border: none;
         outline: none;
-        box-shadow: 1px 1px 5px rgba(0,0,0, .5);
         border-radius:10;
+    }
+    #entry:nth-child(odd) {
+        background-color: ${colors.base00};
+    }
+
+    #entry:nth-child(even) {
+        background-color: ${colors.base00};
     }
     #input image {
         border: none;
@@ -75,8 +82,8 @@
         border: none;
     }
     #entry:selected {
-        box-shadow: 1px 1px 5px rgba(255,255,255, .3);
         border-radius: 20px;
+        background-color: ${colors.base02};
     }
   '';
 
@@ -88,10 +95,10 @@
         outline: none;
         border: none;
         text-shadow:none;
-        background-color:transparent;
     }
     window {
-        all:unset;
+        background-color: ${colors.base00};
+        color: ${colors.base05};
         padding: 20px;
         border-radius: 0px;
     }
@@ -117,7 +124,6 @@
         padding: 20px;
         border: none;
         outline: none;
-        box-shadow: 1px 1px 5px rgba(0,0,0, .5);
         border-radius:10;
     }
     #input image {
@@ -147,8 +153,8 @@
 
     }
     #entry:selected {
-        box-shadow: 1px 1px 5px rgba(255,255,255, .3);
         border-radius: 20px;
+        background-color: ${colors.base02};
     }
   '';
 }

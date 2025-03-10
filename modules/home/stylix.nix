@@ -46,8 +46,8 @@
         addCss = false;
       };
 
-      ghostty = {
-        enable = true;
+      vscode = {
+        enable = false;
       };
     };
   };

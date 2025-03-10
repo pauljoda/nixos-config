@@ -47,9 +47,6 @@
         gaps_in = 10;
         gaps_out = 10;
         border_size = 2;
-        #"col.active_border" = "$color9";
-        #"col.inactive_border" = "0x00000000";
-        #border_part_of_window = true;
         no_border_on_floating = false;
         resize_on_border = true;
         hover_icon_on_border = true;
@@ -88,8 +85,8 @@
 
       decoration = {
         rounding = 10;
-        active_opacity = 0.90;
-        inactive_opacity = 0.90;
+        active_opacity = 0.85;
+        inactive_opacity = 0.70;
         fullscreen_opacity = 1.0;
 
         blur = {
@@ -103,7 +100,7 @@
           ignore_opacity = true;
           noise = 0;
           new_optimizations = true;
-          xray = false;
+          xray = true;
           popups = true;
         };
 
@@ -114,7 +111,6 @@
           offset = "0 2";
           range = 15;
           render_power = 5;
-          #color = "rgba(00000055)";
         };
       };
 
@@ -137,7 +133,7 @@
           # Fade
           "fadeIn, 1, 3, easeOutCubic" # fade in (open) -> layers and windows
           "fadeOut, 1, 2, easeOutCubic" # fade out (close) -> layers and windows
-          "fadeSwitch, 0, 1, easeOutCirc" # fade on changing activewindow and its opacity
+          "fadeSwitch, 0, 10, easeOutCirc" # fade on changing activewindow and its opacity
           "fadeShadow, 1, 10, easeOutCirc" # fade on changing activewindow for shadows
           "fadeDim, 1, 4, fluent_decel" # the easing of the dimming of inactive windows
           "border, 1, 2.7, easeOutCirc" # for animating the border's color switch speed
@@ -160,7 +156,6 @@
         "$mainMod SHIFT, F, fullscreen, 1"
         "$mainMod, O, togglefloating,"
         "$mainMod, SPACE, exec, wofi --show drun -n"
-        "$mainMod SHIFT, D, exec, hyprctl dispatch exec '[workspace 4 silent] discord --enable-features=UseOzonePlatform --ozone-platform=wayland'"
         "$mainMod SHIFT, S, exec, hyprctl dispatch exec '[workspace 5 silent] SoundWireServer'"
         "$mainMod, Escape, exec, hyprlock"
         "$mainMod SHIFT, Escape, exec, shutdown-script"
@@ -275,13 +270,13 @@
         "float,title:^(Firefox — Sharing Indicator)$"
         "move 0 0,title:^(Firefox — Sharing Indicator)$"
         "size 700 450,title:^(Volume Control)$"
-        "move 40 55%,title:^(Volume Control)$"
+        "move 40 55%,title:^(Volume ControlControl)$"
       ];
 
       layerrule = [
-        "blur,wofi"
-        "ignorezero, wofi"
-        "ignorealpha 0.5, wofi"
+        # "blur,wofi"
+        # "ignorezero, wofi"
+        # "ignorealpha 0.5, wofi"
         "blur,waybar"
         "ignorezero, waybar"
         "ignorealpha 0.5, waybar"
