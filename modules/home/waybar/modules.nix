@@ -1,4 +1,4 @@
-{...}: {
+{username, ...}: {
   programs.waybar.settings.mainBar = {
     #######################
     # WORKSPACE MANAGEMENT
@@ -41,9 +41,9 @@
     # Shows focused window with title rewriting rules
     "hyprland/window" = {
       rewrite = {
-        "(.*) - Zen Browser" = "$1";
-        "(.*) - Outlook" = "$1";
-        "(.*) Microsoft Teams" = "$1";
+        "(.*) — Zen Browser" = "$1";
+        "(^$)" = "Hello ${username}";
+        "(.*) - Visual Studio Code" = "$1";
       };
       "separate-outputs" = true;
     };
