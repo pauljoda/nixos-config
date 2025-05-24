@@ -109,7 +109,7 @@ install() {
     echo -e "Copying all ${MAGENTA}wallpapers${NORMAL}"
     cp -r wallpapers/nixos.png ~/Pictures/
     cp -r wallpapers/otherWallpaper/* ~/Pictures/wallpapers/
-    ln -s ~/Pictures/wallpapers/nixos.png ~/nixos-config/nixos.jpg
+    ln -s ~/Pictures/wallpapers/nixos.jpg ~/nixos-config/nixos.jpg
     sleep 0.2
 
     # Get the hardware configuration
