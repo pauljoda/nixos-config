@@ -74,5 +74,7 @@
     xdg-utils # A set of command-line tools that assist applications with a variety of desktop integration tasks
     xxd # A command-line utility to create a hex dump of a given file or standard input
     inputs.alejandra.defaultPackage.${system} # Alejandra, a Nix code formatter
+
+    prismlauncher # Minecraft Mods
   ];
 }
