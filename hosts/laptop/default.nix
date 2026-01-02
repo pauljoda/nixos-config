@@ -43,11 +43,15 @@
   powerManagement.cpuFreqGovernor = "performance";
 
   boot = {
-    kernelModules = ["acpi_call"];
+    kernelModules = [
+			"acpi_call"
+			"wl"
+		];
     extraModulePackages = with config.boot.kernelPackages;
       [
         acpi_call
         cpupower
+				broadcom-sta
       ]
       ++ [pkgs.cpupower-gui];
   };
