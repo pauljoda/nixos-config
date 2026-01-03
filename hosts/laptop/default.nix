@@ -51,7 +51,7 @@
       [
         acpi_call
         cpupower
-				broadcom-sta
+	broadcom_sta
       ]
       ++ [pkgs.cpupower-gui];
   };

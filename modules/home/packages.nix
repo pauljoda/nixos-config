@@ -66,8 +66,8 @@
     cliphist # A clipboard manager
     poweralertd # A daemon to alert on power events
     qalculate-gtk # A powerful and easy-to-use desktop calculator
-    jetbrains.rider # A cross-platform .NET IDE
-    rustdesk # Remote Software
+  #  jetbrains.rider # A cross-platform .NET IDE
+ #   rustdesk # Remote Software
     unzip # A utility to extract files from ZIP archives
     wget # A network utility to retrieve files from the web
     inputs.swww.packages.${system}.swww # Wallpaper tool
@@ -75,6 +75,6 @@
     xxd # A command-line utility to create a hex dump of a given file or standard input
     inputs.alejandra.defaultPackage.${system} # Alejandra, a Nix code formatter
 
-    prismlauncher # Minecraft Mods
+#    prismlauncher # Minecraft Mods
   ];
 }

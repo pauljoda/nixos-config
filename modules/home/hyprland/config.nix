@@ -28,7 +28,7 @@
         touchpad = {
           disable_while_typing = true;
           natural_scroll = true;
-          clickfinger_behavior = false;
+          clickfinger_behavior = true;
           middle_button_emulation = true;
           tap-to-click = true;
           drag_lock = false;
@@ -44,8 +44,8 @@
       general = {
         "$mainMod" = "SUPER";
         layout = "dwindle";
-        gaps_in = 10;
-        gaps_out = 10;
+        gaps_in = 5;
+        gaps_out = 5;
         border_size = 2;
         no_border_on_floating = false;
         resize_on_border = true;
@@ -85,7 +85,7 @@
 
       decoration = {
         rounding = 10;
-        active_opacity = 0.85;
+        active_opacity = 0.90;
         inactive_opacity = 0.70;
         fullscreen_opacity = 1.0;
 
