@@ -249,6 +249,11 @@
         "$mainMod, mouse:273, resizewindow"
       ];
 
+      # Laptop Binding
+      bindl = [
+        ",switch:off:Lid Switch, exec, hyprlock --immediate"
+      ];
+
       # windowrule
       windowrule = [
         "float,imv"
