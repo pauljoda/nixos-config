@@ -9,14 +9,11 @@
         "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP &"
         "nm-applet &"
         "wl-clip-persist --clipboard both"
-        "swaybg -m fill -i $(find ~/Pictures/wallpapers/ -maxdepth 1 -type f) &"
-        "hyprctl setcursor Nordzy-cursors 22 &"
         "poweralertd &"
-        "waybar &"
-        "swaync &"
+        "noctalia-shell &"
         "wl-paste --watch cliphist store &"
         "pypr &"
-        "hyprlock"
+        "noctalia-shell ipc call lockScreen lock"
       ];
 
       input = {
@@ -84,7 +81,8 @@
       };
 
       decoration = {
-        rounding = 10;
+        rounding = 20;
+        rounding_power = 2;
         active_opacity = 0.90;
         inactive_opacity = 0.70;
         fullscreen_opacity = 1.0;
@@ -155,16 +153,16 @@
         "$mainMod, F, fullscreen, 0"
         "$mainMod SHIFT, F, fullscreen, 1"
         "$mainMod, O, togglefloating,"
-        "$mainMod, SPACE, exec, wofi --show drun -n"
+        "$mainMod, SPACE, exec, noctalia-shell ipc call launcher toggle" # App launcher
+        "$mainMod, I, exec, noctalia-shell ipc call settings toggle" # Settings
         "$mainMod SHIFT, S, exec, hyprctl dispatch exec '[workspace 5 silent] SoundWireServer'"
-        "$mainMod, Escape, exec, hyprlock"
+        "$mainMod, Escape, exec, noctalia-shell ipc call lockScreen lock"
         "$mainMod SHIFT, Escape, exec, shutdown-script"
         "$mainMod, P, pseudo,"
         "$mainMod, J, togglesplit,"
         "$mainMod, E, exec, nautilus"
-        "$mainMod SHIFT, B, exec, pkill -SIGUSR1 .waybar-wrapped"
         "$mainMod, C ,exec, hyprpicker -a"
-        "$mainMod, W,exec, wallpaper"
+        "$mainMod, W,exec, noctalia-shell ipc call wallpaper toggle"
         "$mainMod SHIFT, W, exec, vm-start"
 
         # screenshot
@@ -223,9 +221,9 @@
         "$mainMod SHIFT, Return, exec, pypr toggle term"
 
         # media and volume controls
-        ",XF86AudioRaiseVolume,exec, pamixer -i 2"
-        ",XF86AudioLowerVolume,exec, pamixer -d 2"
-        ",XF86AudioMute,exec, pamixer -t"
+        ",XF86AudioRaiseVolume,exec, noctalia-shell ipc call volume increase"
+        ",XF86AudioLowerVolume,exec, noctalia-shell ipc call volume decrease"
+        ",XF86AudioMute,exec, noctalia-shell ipc call volume muteOutput"
         ",XF86AudioPlay,exec, playerctl play-pause"
         ",XF86AudioNext,exec, playerctl next"
         ",XF86AudioPrev,exec, playerctl previous"
@@ -234,13 +232,13 @@
         "$mainMod, mouse_up, workspace, e+1"
 
         # laptop brigthness
-        ",XF86MonBrightnessUp, exec, brightnessctl set 5%+"
-        ",XF86MonBrightnessDown, exec, brightnessctl set 5%-"
+        ",XF86MonBrightnessUp, exec, noctalia-shell ipc call brightness increase"
+        ",XF86MonBrightnessDown, exec, noctalia-shell ipc call brightness decrease"
         "$mainMod, XF86MonBrightnessUp, exec, brightnessctl set 100%+"
         "$mainMod, XF86MonBrightnessDown, exec, brightnessctl set 100%-"
 
         # clipboard manager
-        "ALT, V, exec, cliphist list | wofi --width 1000 -d -n | cliphist decode | wl-copy"
+        "ALT, V, exec, noctalia-shell ipc call launcher clipboard"
       ];
 
       # mouse binding
@@ -251,7 +249,7 @@
 
       # Laptop Binding
       bindl = [
-        ",switch:off:Lid Switch, exec, hyprlock --immediate"
+        ",switch:off:Lid Switch, exec, noctalia-shell ipc call lockScreen lock"
       ];
 
       # windowrule
@@ -278,14 +276,13 @@
         "move 40 55%,title:^(Volume ControlControl)$"
       ];
 
-      layerrule = [
-        # "blur,wofi"
-        # "ignorezero, wofi"
-        # "ignorealpha 0.5, wofi"
-        "blur,waybar"
-        "ignorezero, waybar"
-        "ignorealpha 0.5, waybar"
-      ];
+      # layerrule = [
+      #   "name = noctalia"
+      #   "match:namespace = noctalia-background-.*$"
+      #   "ignore_alpha = 0.5"
+      #   "blur = true"
+      #   "blur_popups = true"
+      # ];
 
       # windowrulev2
       windowrulev2 = [

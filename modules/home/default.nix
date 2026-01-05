@@ -16,17 +16,18 @@
     ./hyprland # window manager
     ./hyprtasking.nix # Workspace viewer
     ./kitty.nix # terminal
-    ./swaync/swaync.nix # notification daemon
+    # ./swaync/swaync.nix # notification daemon
     ./nvim.nix # neovim editor
+    ./noctalia.nix
     ./packages.nix # other packages
     #./pywal # Auto Theming
     ./scripts/scripts.nix # personal scripts
     ./starship # shell prompt
-    ./stylix.nix # Coloring
+    #./stylix.nix # Coloring
     ./vscode.nix # vscode fork
-    ./waybar # status bar
-    ./wlogout # logout menu
-    ./wofi
+    #./waybar # status bar
+    #./wlogout # logout menu
+    # ./wofi
     ./xdg-mimes.nix
     ./zsh # shell
   ];

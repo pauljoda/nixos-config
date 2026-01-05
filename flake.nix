@@ -27,6 +27,15 @@
 
     zen-browser.url = "github:youwen5/zen-browser-flake";
 
+    noctalia = {
+      url = "github:noctalia-dev/noctalia-shell";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    quickshell = {
+      url = "git+https://git.outfoxxed.me/outfoxxed/quickshell";
+    };
+
     swww.url = "github:LGFae/swww";
 
     home-manager = {
