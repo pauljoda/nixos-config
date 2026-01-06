@@ -9,7 +9,7 @@
   home-manager = {
     useUserPackages = true;
     useGlobalPkgs = true;
-    backupFileExtension = "backup";
+    backupFileExtension = "rebuild";
     extraSpecialArgs = {inherit inputs username host;};
     users.${username} = {
       imports =

@@ -1,5 +1,8 @@
-{ pkgs, config, ... }: 
 {
+  pkgs,
+  config,
+  ...
+}: {
   imports = [
     ./hardware-configuration.nix
     ./../../modules/core
@@ -11,12 +14,12 @@
     cpupower-gui
     powertop
   ];
-  
-  services = {    
+
+  services = {
     # thermald.enable = true;
     # cpupower-gui.enable = true;
     power-profiles-daemon.enable = true;
- 
+
     upower = {
       enable = true;
       percentageLow = 20;
@@ -44,14 +47,14 @@
 
   boot = {
     kernelModules = [
-			"acpi_call"
-			"wl"
-		];
+      "acpi_call"
+      "wl"
+    ];
     extraModulePackages = with config.boot.kernelPackages;
       [
         acpi_call
         cpupower
-	broadcom_sta
+        broadcom_sta
       ]
       ++ [pkgs.cpupower-gui];
   };

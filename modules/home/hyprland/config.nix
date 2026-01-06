@@ -320,6 +320,7 @@
     };
 
     extraConfig = "
+      source = ./noctalia/noctalia-colors.conf
       monitor=,preferred,auto,1
 
       xwayland {

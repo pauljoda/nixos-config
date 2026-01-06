@@ -38,6 +38,10 @@
 
     swww.url = "github:LGFae/swww";
 
+    nvim-bundle = {
+      url = "github:jla2000/nvim-bundle";
+    };
+
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
