@@ -25,9 +25,22 @@
       submodules = true;
     };
 
-    zen-browser.url = "github:0xc000022070/zen-browser-flake";
+    zen-browser.url = "github:youwen5/zen-browser-flake";
+
+    noctalia = {
+      url = "github:noctalia-dev/noctalia-shell";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    quickshell = {
+      url = "git+https://git.outfoxxed.me/outfoxxed/quickshell";
+    };
 
     swww.url = "github:LGFae/swww";
+
+    nvim-bundle = {
+      url = "github:jla2000/nvim-bundle";
+    };
 
     home-manager = {
       url = "github:nix-community/home-manager";

@@ -25,17 +25,21 @@
       name = "WhiteSur";
       package = pkgs.whitesur-icon-theme;
     };
+    theme = {
+      name = "WhiteSur-Dark";
+      package = pkgs.whitesur-gtk-theme.override {
+        colorVariants = ["dark"];
+      };
+    };
     # theme = {
-    #   name = "WhiteSur-Dark";
-    #   package = pkgs.whitesur-gtk-theme.override {
-    #     colorVariants = ["dark"];
-    #   };
+    #   name = "adw-gtk3";
+    #   package = pkgs.adw-gtk3;
     # };
-    # cursorTheme = {
-    #   name = "Bibata-Modern-Ice";
-    #   package = pkgs.bibata-cursors;
-    #   size = 22;
-    # };
+    cursorTheme = {
+      name = "Bibata-Modern-Ice";
+      package = pkgs.bibata-cursors;
+      size = 22;
+    };
 
     gtk3.extraConfig = {
       gtk-application-prefer-dark-theme = 1;
@@ -51,9 +55,9 @@
     };
   };
 
-  # home.pointerCursor = {
-  #   name = "Bibata-Modern-Ice";
-  #   package = pkgs.bibata-cursors;
-  #   size = 22;
-  # };
+  home.pointerCursor = {
+    name = "Bibata-Modern-Ice";
+    package = pkgs.bibata-cursors;
+    size = 22;
+  };
 }

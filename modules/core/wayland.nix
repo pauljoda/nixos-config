@@ -1,17 +1,19 @@
-{ inputs, pkgs, ... }:
-{
-  programs.hyprland.enable = true;
-  xdg.portal = {
+{pkgs, ...}: {
+  programs.hyprland = {
     enable = true;
-    wlr.enable = true;
-    xdgOpenUsePortal = true;
-    extraPortals = [
-      pkgs.xdg-desktop-portal-hyprland
-      pkgs.xdg-desktop-portal-gtk
-    ];
   };
 
-  environment.systemPackages = with pkgs; [
-    # xwaylandvideobridge
-  ];
+  xdg.portal = {
+    enable = true;
+    xdgOpenUsePortal = true;
+    config = {
+      common.default = ["gtk"];
+      hyprland.default = [
+        "gtk"
+        "hyprland"
+      ];
+    };
+
+    extraPortals = [pkgs.xdg-desktop-portal-gtk];
+  };
 }
