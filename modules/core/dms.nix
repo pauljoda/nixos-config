@@ -13,4 +13,11 @@
     enableAudioWavelength = true;
     enableCalendarEvents = true;
   };
+
+  services.displayManager.dms-greeter = {
+    enable = true;
+    compositor.name = "hyprland";
+
+    configHome = "/home/paul";
+  };
 }
