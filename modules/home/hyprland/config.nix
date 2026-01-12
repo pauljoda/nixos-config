@@ -71,13 +71,6 @@
         special_scale_factor = 1;
       };
 
-      # gestures = {
-      #   workspace_swipe = true;
-      #   workspace_swipe_distance = 300;
-      #   workspace_swipe_cancel_ratio = .05;
-      #   workspace_swipe_min_speed_to_force = 0;
-      # };
-
       decoration = {
         rounding = 20;
         rounding_power = 2;
@@ -248,12 +241,13 @@
 
       # Laptop Binding
       bindl = [
-        ",switch:off:Lid Switch, exec, dms ipc call lock 1"
+        ",switch:off:Lid Switch, exec, dms ipc call lock lock"
       ];
 
       # windowrule
       windowrule = [
         "match:class ^(imv)$, float on"
+        "match:class ^(org.gnome.NautilusPreviewer)$, float on"
         "match:class ^(org.quickshell)$, float on"
         "match:class ^(imv)$, center on"
         "match:class ^(imv)$, size 1200 725"
@@ -305,14 +299,6 @@
         "match:class ^(xwaylandvideobridge)$, max_size 1 1"
         "match:class ^(xwaylandvideobridge)$, no_blur on"
       ];
-
-      # layerrule = [
-      #   "name = noctalia"
-      #   "match:namespace = noctalia-background-.*$"
-      #   "ignore_alpha = 0.5"
-      #   "blur = true"
-      #   "blur_popups = true"
-      # ];
     };
 
     extraConfig = "
