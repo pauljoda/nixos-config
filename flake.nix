@@ -25,6 +25,11 @@
       submodules = true;
     };
 
+    pyprland = {
+      type = "git";
+      url = "https://github.com/hyprland-community/pyprland";
+    };
+
     zen-browser.url = "github:youwen5/zen-browser-flake";
 
     noctalia = {

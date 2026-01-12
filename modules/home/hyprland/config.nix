@@ -1,19 +1,18 @@
 {...}: {
   wayland.windowManager.hyprland = {
     settings = {
+      "$mainMod" = "SUPER";
+
       # autostart
       exec-once = [
-        "swww-daemon &"
         "systemctl --user import-environment &"
         "hash dbus-update-activation-environment 2>/dev/null &"
         "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP &"
         "nm-applet &"
         "wl-clip-persist --clipboard both"
         "poweralertd &"
-        "noctalia-shell &"
         "wl-paste --watch cliphist store &"
         "pypr &"
-        "noctalia-shell ipc call lockScreen lock"
       ];
 
       input = {
@@ -39,12 +38,11 @@
       };
 
       general = {
-        "$mainMod" = "SUPER";
         layout = "dwindle";
         gaps_in = 5;
         gaps_out = 5;
         border_size = 2;
-        no_border_on_floating = false;
+        #no_border_on_floating = false;
         resize_on_border = true;
         hover_icon_on_border = true;
       };
@@ -73,12 +71,12 @@
         special_scale_factor = 1;
       };
 
-      gestures = {
-        workspace_swipe = true;
-        workspace_swipe_distance = 300;
-        workspace_swipe_cancel_ratio = .05;
-        workspace_swipe_min_speed_to_force = 0;
-      };
+      # gestures = {
+      #   workspace_swipe = true;
+      #   workspace_swipe_distance = 300;
+      #   workspace_swipe_cancel_ratio = .05;
+      #   workspace_swipe_min_speed_to_force = 0;
+      # };
 
       decoration = {
         rounding = 20;
@@ -142,7 +140,7 @@
 
       bind = [
         # show keybinds list
-        "$mainMod, F1, exec, show-keybinds"
+        "$mainMod, H, exec, dms ipc call keybinds toggle hyprland"
 
         # keybindings
         "$mainMod, Return, exec, ghostty"
@@ -153,16 +151,15 @@
         "$mainMod, F, fullscreen, 0"
         "$mainMod SHIFT, F, fullscreen, 1"
         "$mainMod, O, togglefloating,"
-        "$mainMod, SPACE, exec, noctalia-shell ipc call launcher toggle" # App launcher
-        "$mainMod, I, exec, noctalia-shell ipc call settings toggle" # Settings
+        "$mainMod, SPACE, exec, dms ipc call spotlight toggle" # App launcher
+        "$mainMod, I, exec, dms ipc call settings toggle" # Settings
         "$mainMod SHIFT, S, exec, hyprctl dispatch exec '[workspace 5 silent] SoundWireServer'"
-        "$mainMod, Escape, exec, noctalia-shell ipc call lockScreen lock"
-        "$mainMod SHIFT, Escape, exec, shutdown-script"
+        "$mainMod, Escape, exec, dms ipc call lock lock"
         "$mainMod, P, pseudo,"
         "$mainMod, J, togglesplit,"
         "$mainMod, E, exec, nautilus"
         "$mainMod, C ,exec, hyprpicker -a"
-        "$mainMod, W,exec, noctalia-shell ipc call wallpaper toggle"
+        #"$mainMod, W,exec, noctalia-shell ipc call wallpaper toggle"
         "$mainMod SHIFT, W, exec, vm-start"
 
         # screenshot
@@ -188,16 +185,16 @@
         "$mainMod, 0, workspace, 10"
 
         # same as above, but switch to the workspace
-        "$mainMod SHIFT, 1, movetoworkspacesilent, 1" # movetoworkspacesilent
-        "$mainMod SHIFT, 2, movetoworkspacesilent, 2"
-        "$mainMod SHIFT, 3, movetoworkspacesilent, 3"
-        "$mainMod SHIFT, 4, movetoworkspacesilent, 4"
-        "$mainMod SHIFT, 5, movetoworkspacesilent, 5"
-        "$mainMod SHIFT, 6, movetoworkspacesilent, 6"
-        "$mainMod SHIFT, 7, movetoworkspacesilent, 7"
-        "$mainMod SHIFT, 8, movetoworkspacesilent, 8"
-        "$mainMod SHIFT, 9, movetoworkspacesilent, 9"
-        "$mainMod SHIFT, 0, movetoworkspacesilent, 10"
+        "$mainMod SHIFT, 1, movetoworkspace, 1" # movetoworkspacesilent
+        "$mainMod SHIFT, 2, movetoworkspace, 2"
+        "$mainMod SHIFT, 3, movetoworkspace, 3"
+        "$mainMod SHIFT, 4, movetoworkspace, 4"
+        "$mainMod SHIFT, 5, movetoworkspace, 5"
+        "$mainMod SHIFT, 6, movetoworkspace, 6"
+        "$mainMod SHIFT, 7, movetoworkspace, 7"
+        "$mainMod SHIFT, 8, movetoworkspace, 8"
+        "$mainMod SHIFT, 9, movetoworkspace, 9"
+        "$mainMod SHIFT, 0, movetoworkspace, 10"
         "$mainMod CTRL, c, movetoworkspace, empty"
 
         # window control
@@ -220,25 +217,27 @@
         # Dropdown terminal
         "$mainMod SHIFT, Return, exec, pypr toggle term"
 
+        "$mainMod, N, exec, dms ipc call notepad toggle"
+
         # media and volume controls
-        ",XF86AudioRaiseVolume,exec, noctalia-shell ipc call volume increase"
-        ",XF86AudioLowerVolume,exec, noctalia-shell ipc call volume decrease"
-        ",XF86AudioMute,exec, noctalia-shell ipc call volume muteOutput"
-        ",XF86AudioPlay,exec, playerctl play-pause"
-        ",XF86AudioNext,exec, playerctl next"
-        ",XF86AudioPrev,exec, playerctl previous"
-        ",XF86AudioStop, exec, playerctl stop"
+        ",XF86AudioRaiseVolume,exec, dms ipc call audio increment 5"
+        ",XF86AudioLowerVolume,exec, dms ipc call audio decrement 5"
+        ",XF86AudioMute,exec, dms ipc call audio mute"
+        ",XF86AudioPlay,exec, dms ipc call mpris playPause"
+        ",XF86AudioNext,exec, dms ipc call mpris  next"
+        ",XF86AudioPrev,exec, dms ipc call mpris  previous"
+        ",XF86AudioStop, exec, dms ipc call mpris  stop"
         "$mainMod, mouse_down, workspace, e-1"
         "$mainMod, mouse_up, workspace, e+1"
 
         # laptop brigthness
-        ",XF86MonBrightnessUp, exec, noctalia-shell ipc call brightness increase"
-        ",XF86MonBrightnessDown, exec, noctalia-shell ipc call brightness decrease"
+        ",XF86MonBrightnessUp, exec, dms ipc call brightness increment 5 ''"
+        ",XF86MonBrightnessDown, exec,dms ipc call brightness decrement 5 ''"
         "$mainMod, XF86MonBrightnessUp, exec, brightnessctl set 100%+"
         "$mainMod, XF86MonBrightnessDown, exec, brightnessctl set 100%-"
 
         # clipboard manager
-        "ALT, V, exec, noctalia-shell ipc call launcher clipboard"
+        "ALT, V, exec, dms ipc call clipboard toggle"
       ];
 
       # mouse binding
@@ -249,31 +248,62 @@
 
       # Laptop Binding
       bindl = [
-        ",switch:off:Lid Switch, exec, noctalia-shell ipc call lockScreen lock"
+        ",switch:off:Lid Switch, exec, dms ipc call lock 1"
       ];
 
       # windowrule
       windowrule = [
-        "float,imv"
-        "center,imv"
-        "size 1200 725,imv"
-        "float,mpv"
-        "center,mpv"
-        "size 1200 725,mpv"
-        "float,title:^(float_ghostty)$"
-        "center,title:^(float_ghostty)$"
-        "size 950 600,title:^(float_ghostty)$"
-        "float,audacious"
-        "workspace 8 silent, audacious"
-        "tile, neovide"
-        "idleinhibit focus,mpv"
-        "float,udiskie"
-        "float,title:^(Transmission)$"
-        "float,title:^(Volume Control)$"
-        "float,title:^(Firefox — Sharing Indicator)$"
-        "move 0 0,title:^(Firefox — Sharing Indicator)$"
-        "size 700 450,title:^(Volume Control)$"
-        "move 40 55%,title:^(Volume ControlControl)$"
+        "match:class ^(imv)$, float on"
+        "match:class ^(org.quickshell)$, float on"
+        "match:class ^(imv)$, center on"
+        "match:class ^(imv)$, size 1200 725"
+        "match:class ^(mpv)$, float on"
+        "match:class ^(mpv)$, center on"
+        "match:class ^(mpv)$, size 1200 725"
+        "match:title ^(float_ghostty)$, float on"
+        "match:title ^(float_ghostty)$, center on"
+        "match:title ^(float_ghostty)$, size 950 600"
+        "match:class ^(audacious)$, float on"
+        "match:class ^(audacious)$, workspace 8 silent"
+        "match:class ^(neovide)$, tile on"
+        "match:class ^(mpv)$, idle_inhibit focus"
+        "match:class ^(udiskie)$, float on"
+        "match:title ^(Transmission)$, float on"
+        "match:title ^(Volume Control)$, float on"
+        "match:title ^(Firefox — Sharing Indicator)$, float on"
+        "match:title ^(Firefox — Sharing Indicator)$, move 0 0"
+        "match:title ^(Volume Control)$, size 700 450"
+        "match:title ^(Volume ControlControl)$, move 40 55%"
+
+        "match:title ^(Picture-in-Picture)$, float on"
+        "match:title ^(Picture-in-Picture)$, opacity 1.0 override 1.0 override"
+        "match:title ^(Picture-in-Picture)$, pin on"
+        "match:title ^(.*imv.*)$, opacity 1.0 override 1.0 override"
+        "match:title ^(.*mpv.*)$, opacity 1.0 override 1.0 override"
+        "match:class ^(mpv)$, idle_inhibit focus"
+        "match:class ^(firefox)$, idle_inhibit fullscreen"
+        "match:class ^(zenity)$, float on"
+        "match:class ^(zenity)$, center on"
+        "match:class ^(zenity)$, size 850 500"
+        "match:class ^(pavucontrol)$, float on"
+        "match:class ^(SoundWireServer)$, float on"
+        "match:class ^(.sameboy-wrapped)$, float on"
+        "match:class ^(file_progress)$, float on"
+        "match:class ^(confirm)$, float on"
+        "match:class ^(dialog)$, float on"
+        "match:class ^(download)$, float on"
+        "match:class ^(notification)$, float on"
+        "match:class ^(error)$, float on"
+        "match:class ^(confirmreset)$, float on"
+        "match:title ^(Open File)$, float on"
+        "match:title ^(branchdialog)$, float on"
+        "match:title ^(Confirm to replace files)$, float on"
+        "match:title ^(File Operation Progress)$, float on"
+        "match:class ^(xwaylandvideobridge)$, opacity 0.0 override"
+        "match:class ^(xwaylandvideobridge)$, no_anim on"
+        "match:class ^(xwaylandvideobridge)$, no_initial_focus on"
+        "match:class ^(xwaylandvideobridge)$, max_size 1 1"
+        "match:class ^(xwaylandvideobridge)$, no_blur on"
       ];
 
       # layerrule = [
@@ -283,44 +313,10 @@
       #   "blur = true"
       #   "blur_popups = true"
       # ];
-
-      # windowrulev2
-      windowrulev2 = [
-        "float, title:^(Picture-in-Picture)$"
-        "opacity 1.0 override 1.0 override, title:^(Picture-in-Picture)$"
-        "pin, title:^(Picture-in-Picture)$"
-        "opacity 1.0 override 1.0 override, title:^(.*imv.*)$"
-        "opacity 1.0 override 1.0 override, title:^(.*mpv.*)$"
-        "idleinhibit focus, class:^(mpv)$"
-        "idleinhibit fullscreen, class:^(firefox)$"
-        "float,class:^(zenity)$"
-        "center,class:^(zenity)$"
-        "size 850 500,class:^(zenity)$"
-        "float,class:^(pavucontrol)$"
-        "float,class:^(SoundWireServer)$"
-        "float,class:^(.sameboy-wrapped)$"
-        "float,class:^(file_progress)$"
-        "float,class:^(confirm)$"
-        "float,class:^(dialog)$"
-        "float,class:^(download)$"
-        "float,class:^(notification)$"
-        "float,class:^(error)$"
-        "float,class:^(confirmreset)$"
-        "float,title:^(Open File)$"
-        "float,title:^(branchdialog)$"
-        "float,title:^(Confirm to replace files)$"
-        "float,title:^(File Operation Progress)$"
-
-        "opacity 0.0 override,class:^(xwaylandvideobridge)$"
-        "noanim,class:^(xwaylandvideobridge)$"
-        "noinitialfocus,class:^(xwaylandvideobridge)$"
-        "maxsize 1 1,class:^(xwaylandvideobridge)$"
-        "noblur,class:^(xwaylandvideobridge)$"
-      ];
     };
 
     extraConfig = "
-      source = ./noctalia/noctalia-colors.conf
+      source = ~/.config/hypr/dms-colors.conf
       monitor=,preferred,auto,1
 
       xwayland {

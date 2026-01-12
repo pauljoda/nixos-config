@@ -1,5 +1,8 @@
-{ pkgs, username, ... }: 
 {
+  pkgs,
+  username,
+  ...
+}: {
   services = {
     xserver = {
       enable = true;
@@ -18,5 +21,5 @@
     };
   };
   # To prevent getting stuck at shutdown
-  systemd.extraConfig = "DefaultTimeoutStopSec=10s";
+  #services.logind.settings.Login = "DefaultTimeoutStopSec=10s";
 }

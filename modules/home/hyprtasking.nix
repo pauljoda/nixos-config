@@ -19,7 +19,7 @@
           #bg_color = "0x${config.lib.stylix.colors.base05-hex}ff";
           border_size = 1;
 
-          exit_behavior = "hovered";
+          #exit_behavior = "hovered";
         };
       };
     };

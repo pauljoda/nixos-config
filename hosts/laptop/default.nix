@@ -3,6 +3,10 @@
   config,
   ...
 }: {
+  nixpkgs.config.permittedInsecurePackages = [
+    "broadcom-sta-6.30.223.271-59-6.18.4"
+  ];
+
   imports = [
     ./hardware-configuration.nix
     ./../../modules/core

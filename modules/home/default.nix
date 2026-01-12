@@ -10,6 +10,7 @@
     ./browser.nix
     ./btop.nix # resources monitor
     ./cava.nix # audio visualizer
+    ./dms.nix
     ./git.nix # version control
     ./ghostty.nix # TTY
     ./gtk.nix # gtk theme
@@ -17,7 +18,7 @@
     ./hyprtasking.nix # Workspace viewer
     ./kitty.nix # terminal (backup)
     ./nvim.nix # neovim editor
-    ./noctalia.nix
+    #./noctalia.nix
     ./packages.nix # other packages
     ./starship # shell prompt
     ./vscode.nix # vscode fork

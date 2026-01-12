@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-{
+{pkgs, ...}: {
   services = {
     gvfs.enable = true;
     gnome = {
@@ -15,8 +14,10 @@
       gnome-settings-daemon
     ];
   };
-  services.logind.extraConfig = ''
-    # don’t shutdown when power button is short-pressed
-    HandlePowerKey=ignore
-  '';
+  services.logind.settings = {
+    Login = {
+      # don’t shutdown when power button is short-pressed
+      HandlePowerKey = "ignore";
+    };
+  };
 }
