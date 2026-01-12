@@ -1,6 +1,7 @@
 {
   pkgs,
   config,
+  inputs,
   ...
 }: {
   nixpkgs.config.permittedInsecurePackages = [
@@ -10,6 +11,7 @@
   imports = [
     ./hardware-configuration.nix
     ./../../modules/core
+    inputs.nixos-hardware.nixosModules.dell-latitude-5490
   ];
 
   environment.systemPackages = with pkgs; [

@@ -303,7 +303,8 @@
 
     extraConfig = "
       source = ~/.config/hypr/dms-colors.conf
-      monitor=,preferred,auto,1
+      monitor=DP-2,5120x1440@60,1620x0,1
+      monitor=eDP-1,1920x1080@60,3220x1440,1
 
       xwayland {
         force_zero_scaling = true

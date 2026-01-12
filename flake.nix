@@ -15,6 +15,8 @@
       inputs.hyprland.follows = "hyprland";
     };
 
+    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
+
     alejandra.url = "github:kamadorueda/alejandra/3.0.0";
 
     nix-flatpak.url = "github:gmodena/nix-flatpak";
