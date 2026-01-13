@@ -15,11 +15,11 @@
         hyprtasking = {
           layout = "grid";
 
-          gap_size = 2;
+          gap_size = 0;
           #bg_color = "0x${config.lib.stylix.colors.base05-hex}ff";
-          border_size = 1;
+          border_size = 0;
 
-          #exit_behavior = "hovered";
+          exit_on_hovered = true;
         };
       };
     };
