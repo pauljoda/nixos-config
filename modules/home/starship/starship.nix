@@ -312,30 +312,6 @@
     };
   };
 
-  noctaliaPalette = {
-    palette = "noctalia";
-    palettes = {
-      noctalia = {
-        primary = "{{colors.primary.default.hex}}";
-        on_primary = "{{colors.on_primary.default.hex}}";
-        secondary = "{{colors.secondary.default.hex}}";
-        on_secondary = "{{colors.on_secondary.default.hex}}";
-        tertiary = "{{colors.tertiary.default.hex}}";
-        on_tertiary = "{{colors.on_tertiary.default.hex}}";
-        surface = "{{colors.surface.default.hex}}";
-        on_surface = "{{colors.on_surface.default.hex}}";
-        surface_variant = "{{colors.surface_container.default.hex}}";
-        on_surface_variant = "{{colors.on_surface_variant.default.hex}}";
-        outline = "{{colors.outline_variant.default.hex}}";
-        error = "{{colors.error.default.hex}}";
-        on_error = "{{colors.on_error.default.hex}}";
-      };
-    };
-  };
-
-  starshipTemplate = (pkgs.formats.toml {}).generate "starship-noctalia-template.toml" (starshipSettings // noctaliaPalette);
-  starshipConfigPath = "${config.home.homeDirectory}/.config/starship-noctalia.toml";
-  starshipTemplatePath = "${config.home.homeDirectory}/.config/noctalia/templates/starship.toml";
 in {
   programs.starship = {
     enable = true;
@@ -346,46 +322,4 @@ in {
 
     settings = starshipSettings;
   };
-
-  home.sessionVariables = {
-    STARSHIP_CONFIG = starshipConfigPath;
-  };
-
-  home.file.".config/noctalia/templates/starship.toml".source = starshipTemplate;
-  home.file.".config/noctalia/user-templates.toml".text = ''
-    [config]
-
-    [templates.starship]
-    input_path = "${starshipTemplatePath}"
-    output_path = "${starshipConfigPath}"
-  '';
-
-  home.activation.seedStarshipNoctalia = lib.hm.dag.entryAfter ["writeBoundary"] ''
-    set -eu
-
-    config_dir="''${XDG_CONFIG_HOME:-$HOME/.config}"
-    cache_dir="''${XDG_CACHE_HOME:-$HOME/.cache}"
-    settings="$config_dir/noctalia/settings.json"
-    templates="$config_dir/noctalia/user-templates.toml"
-    output="$config_dir/starship-noctalia.toml"
-    wallpapers="$cache_dir/noctalia/wallpapers.json"
-
-    if [ -e "$output" ] || [ ! -f "$settings" ] || [ ! -f "$templates" ]; then
-      exit 0
-    fi
-
-    mode="$(${pkgs.jq}/bin/jq -r '.colorSchemes.darkMode // true | if . then "dark" else "light" end' "$settings")"
-    scheme_type="$(${pkgs.jq}/bin/jq -r '.colorSchemes.matugenSchemeType // "scheme-content"' "$settings")"
-    wp=""
-
-    if [ -f "$wallpapers" ]; then
-      wp="$(${pkgs.jq}/bin/jq -r '.wallpapers | to_entries[0].value // .defaultWallpaper // empty' "$wallpapers")"
-    fi
-
-    if [ -z "$wp" ]; then
-      exit 0
-    fi
-
-    ${pkgs.matugen}/bin/matugen image "$wp" --config "$templates" --mode "$mode" --type "$scheme_type" || true
-  '';
 }

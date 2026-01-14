@@ -39,6 +39,8 @@
     zenity # A tool to display GTK+ dialog boxes from the command line
     winetricks # A helper script to download and install various redistributable runtime libraries needed to run some programs in Wine
     wineWowPackages.wayland # Wine packages for running Windows applications on Wayland
+    whitesur-icon-theme
+    sushi
 
     # C / C++
     #gcc # The GNU Compiler Collection, a compiler system supporting various programming languages

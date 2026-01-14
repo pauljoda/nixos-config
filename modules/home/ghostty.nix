@@ -7,5 +7,11 @@
 }: {
   home.packages = with pkgs; [ghostty];
 
-  programs.ghostty.enable = true;
+  programs.ghostty = {
+    enable = true;
+    settings = {
+      "config-file" = "${config.home.homeDirectory}/.config/ghostty/config-dankcolors";
+      "app-notifications" = "no-clipboard-copy,no-config-reload";
+    };
+  };
 }

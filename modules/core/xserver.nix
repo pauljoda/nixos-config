@@ -1,15 +1,18 @@
-{ pkgs, username, ... }: 
 {
+  pkgs,
+  username,
+  ...
+}: {
   services = {
     xserver = {
       enable = true;
       xkb.layout = "us";
     };
 
-    displayManager.autoLogin = {
-      enable = true;
-      user = "${username}";
-    };
+    # displayManager.autoLogin = {
+    #   enable = true;
+    #   user = "${username}";
+    # };
     libinput = {
       enable = true;
       # mouse = {
@@ -18,5 +21,5 @@
     };
   };
   # To prevent getting stuck at shutdown
-  systemd.extraConfig = "DefaultTimeoutStopSec=10s";
+  #services.logind.settings.Login = "DefaultTimeoutStopSec=10s";
 }

@@ -4,8 +4,7 @@
   pkgs,
   host,
   ...
-}:
-{
+}: {
   programs.zsh = {
     shellAliases = {
       # Utils
@@ -13,8 +12,8 @@
       cd = "z";
       tt = "gtrash put";
       cat = "bat";
-#      nano = "micro";
- #     code = "codium";
+      #      nano = "micro";
+      #     code = "codium";
       diff = "delta --diff-so-fancy --side-by-side";
       less = "bat";
       y = "yazi";
@@ -34,7 +33,7 @@
       # Nixos
       cdnix = "cd ~/nixos-config";
       ns = "nom-shell --run zsh";
-      nix-switch = "(cd ~/nixos-config && git add .) && nh os switch";   
+      nix-switch = "nh os switch ~/nixos-config";
       nix-update = "nh os switch --update";
       nix-clean = "nh clean all --keep 5";
       nix-search = "nh search";

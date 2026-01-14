@@ -25,6 +25,11 @@
       submodules = true;
     };
 
+    pyprland = {
+      type = "git";
+      url = "https://github.com/hyprland-community/pyprland";
+    };
+
     zen-browser.url = "github:youwen5/zen-browser-flake";
 
     noctalia = {
@@ -83,6 +88,14 @@
         modules = [(import ./hosts/vm)];
         specialArgs = {
           host = "vm";
+          inherit self inputs username;
+        };
+      };
+      macbook-air-2013 = nixpkgs.lib.nixosSystem {
+        inherit system;
+        modules = [(import ./hosts/macbook-air-2013)];
+        specialArgs = {
+          host = "macbook-air-2013";
           inherit self inputs username;
         };
       };
