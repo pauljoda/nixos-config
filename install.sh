@@ -66,29 +66,108 @@ get_username() {
 set_username() {
     sed -i -e "s/${CURRENT_USERNAME}/${username}/g" ./flake.nix
     sed -i -e "s/${CURRENT_USERNAME}/${username}/g" ./modules/home/audacious/config
-    sed -i -e "s/${CURRENT_USERNAME}/${username}/g" ./modules/home/wofi/style.nix
     sed -i -e "s/${CURRENT_USERNAME}/${username}/g" ./modules/home/ghostty.nix
 }
 
 get_host() {
-    echo -en "Choose a ${GREEN}host${NORMAL} - [${YELLOW}D${NORMAL}]esktop, [${YELLOW}L${NORMAL}]aptop or [${YELLOW}V${NORMAL}]irtual machine: "
+    echo -en "Enter the ${GREEN}host name${NORMAL} (ex: ${YELLOW}macbook-air-2013${NORMAL}): "
+    read -r HOST
+
+    if [[ -z $HOST ]]; then
+        echo "Host name cannot be empty."
+        exit 1
+    fi
+
+    if [[ -d "hosts/${HOST}" ]]; then
+        echo -en "Host ${YELLOW}${HOST}${NORMAL} already exists. Use existing host? "
+        confirm
+        return
+    fi
+
+    echo -en "Host ${YELLOW}${HOST}${NORMAL} does not exist. Create new host? "
+    confirm
+    mkdir -p "hosts/${HOST}"
+
+    echo -en "Choose a ${GREEN}base template${NORMAL} - [${YELLOW}D${NORMAL}]esktop, [${YELLOW}L${NORMAL}]aptop or [${YELLOW}V${NORMAL}]irtual machine: "
     read -n 1 -r
     echo
 
     if [[ $REPLY =~ ^[Dd]$ ]]; then
-        HOST='desktop'
+        TEMPLATE='desktop'
     elif [[ $REPLY =~ ^[Ll]$ ]]; then
-        HOST='laptop'
-     elif [[ $REPLY =~ ^[Vv]$ ]]; then
-        HOST='vm'
+        TEMPLATE='laptop'
+    elif [[ $REPLY =~ ^[Vv]$ ]]; then
+        TEMPLATE='vm'
     else
         echo "Invalid choice. Please select 'D' for desktop, 'L' for laptop or 'V' for virtual machine."
         exit 1
     fi
-    
-    echo -en "$NORMAL"
-    echo -en "Use the$YELLOW "$HOST"$NORMAL ${GREEN}host${NORMAL} ? "
+
+    echo -en "Use the ${YELLOW}${TEMPLATE}${NORMAL} ${GREEN}template${NORMAL}? "
     confirm
+    cp -r "hosts/${TEMPLATE}/." "hosts/${HOST}/"
+    add_host_to_flake "${HOST}"
+}
+
+add_host_to_flake() {
+    local host="$1"
+    local flake_file="flake.nix"
+    local block
+
+    if rg -q "^[[:space:]]${host}[[:space:]]*= nixpkgs\\.lib\\.nixosSystem" "$flake_file"; then
+        return
+    fi
+
+    block=$(cat <<EOF
+      ${host} = nixpkgs.lib.nixosSystem {
+        inherit system;
+        modules = [(import ./hosts/${host})];
+        specialArgs = {
+          host = "${host}";
+          inherit self inputs username;
+        };
+      };
+EOF
+)
+
+    awk -v block="$block" '
+    function count(s, c,   n, i, ch) {
+        n = 0
+        for (i = 1; i <= length(s); i++) {
+            ch = substr(s, i, 1)
+            if (ch == c) n++
+        }
+        return n
+    }
+    BEGIN { in_block = 0; depth = 0; inserted = 0 }
+    {
+        line = $0
+        if (!in_block && line ~ /nixosConfigurations = {/) {
+            in_block = 1
+        }
+        if (in_block) {
+            opens = count(line, "{")
+            closes = count(line, "}")
+            new_depth = depth + opens - closes
+            if (!inserted && new_depth == 0) {
+                print block
+                inserted = 1
+            }
+            depth = new_depth
+        }
+        print line
+    }
+    END {
+        if (!inserted) {
+            print block
+        }
+    }' "$flake_file" > "${flake_file}.tmp" && mv "${flake_file}.tmp" "$flake_file"
+}
+
+setup_configs() {
+    # Mirror ./config into ~/.config, creating directories as needed.
+    mkdir -p ~/.config
+    cp -r ./config/. ~/.config/
 }
 
 install() {
@@ -135,6 +214,7 @@ main() {
     set_username
     get_host
 
+    setup_configs
     install
 }
 

@@ -91,6 +91,14 @@
           inherit self inputs username;
         };
       };
+      macbook-air-2013 = nixpkgs.lib.nixosSystem {
+        inherit system;
+        modules = [(import ./hosts/macbook-air-2013)];
+        specialArgs = {
+          host = "macbook-air-2013";
+          inherit self inputs username;
+        };
+      };
     };
   };
 }

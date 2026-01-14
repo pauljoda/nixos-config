@@ -1,0 +1,261 @@
+format = "[](fg:primary)$os[](bg:primary fg:secondary)$username[](bg:secondary fg:tertiary)$directory[ ](fg:tertiary)$git_branch$git_status$all$character"
+palette = "dms"
+
+[aws]
+format = "[$symbol($version)]($style)"
+symbol = "   "
+
+[buf]
+format = "[$symbol($version)]($style)"
+symbol = "  "
+
+[c]
+format = "[$symbol($version)]($style)"
+symbol = "  "
+
+[character]
+disabled = false
+error_symbol = "[✗](bold fg:error)"
+success_symbol = "[](bold fg:primary)"
+
+[cmake]
+format = "[$symbol($version)]($style)"
+symbol = "  "
+
+[cmd_duration]
+format = "[$duration](fg:tertiary)"
+
+[conda]
+format = "[$symbol($version)]($style)"
+symbol = "  "
+
+[crystal]
+format = "[$symbol($version)]($style)"
+symbol = "  "
+
+[dart]
+format = "[$symbol($version)]($style)"
+symbol = "  "
+
+[directory]
+format = "[$path](bg:tertiary fg:on_tertiary)"
+truncation_length = 2
+truncation_symbol = "…/"
+
+[directory.substitutions]
+Documents = "󰈙 "
+Downloads = " "
+Music = "󰝚 "
+Pictures = " "
+Scripts = "󰲋 "
+
+[docker_context]
+format = "[$symbol($version)]($style)"
+symbol = "  "
+
+[elixir]
+format = "[$symbol($version)]($style)"
+symbol = "  "
+
+[elm]
+format = "[$symbol($version)]($style)"
+symbol = "  "
+
+[fennel]
+format = "[$symbol($version)]($style)"
+symbol = "  "
+
+[fossil_branch]
+format = "[$symbol($version)]($style)"
+symbol = "  "
+
+[git_branch]
+format = "[$symbol($branch) ($version)]($style)"
+symbol = "  "
+
+[git_commit]
+format = "[$symbol($version)]($style)"
+tag_symbol = "  "
+
+[golang]
+format = "[$symbol($version)]($style)"
+symbol = "  "
+
+[gradle]
+format = "[$symbol($version)]($style)"
+symbol = "  "
+
+[guix_shell]
+format = "[$symbol($version)]($style)"
+symbol = "   "
+
+[haskell]
+format = "[$symbol($version)]($style)"
+symbol = "  "
+
+[haxe]
+format = "[$symbol($version)]($style)"
+symbol = "  "
+
+[hg_branch]
+format = "[$symbol($version)]($style)"
+symbol = "  "
+
+[hostname]
+format = "[$symbol($version)]($style)"
+ssh_symbol = "  "
+
+[java]
+format = "[$symbol($version)]($style)"
+symbol = "  "
+
+[julia]
+format = "[$symbol($version)]($style)"
+symbol = "  "
+
+[kotlin]
+format = "[$symbol($version)]($style)"
+symbol = "  "
+
+[lua]
+format = "[$symbol($version)]($style)"
+symbol = "  "
+
+[memory_usage]
+format = "[$symbol($version)]($style)"
+symbol = " 󰍛 "
+
+[meson]
+format = "[$symbol($version)]($style)"
+symbol = " 󰔷 "
+
+[nim]
+format = "[$symbol($version)]($style)"
+symbol = " 󰆥 "
+
+[nix_shell]
+format = "[$symbol($version)]($style)"
+symbol = "  "
+
+[nodejs]
+format = "[$symbol($version)]($style)"
+symbol = "  "
+
+[ocaml]
+format = "[$symbol($version)]($style)"
+symbol = "  "
+
+[os]
+disabled = false
+style = "bg:primary fg:on_primary"
+
+[os.symbols]
+AlmaLinux = " "
+Alpaquita = " "
+Alpine = " "
+Amazon = " "
+Android = " "
+Arch = " "
+Artix = " "
+CachyOS = " "
+CentOS = " "
+Debian = " "
+DragonFly = " "
+Emscripten = " "
+EndeavourOS = " "
+Fedora = " "
+FreeBSD = " "
+Garuda = "󰛓 "
+Gentoo = " "
+HardenedBSD = "󰞌 "
+Illumos = "󰈸 "
+Kali = " "
+Linux = " "
+Mabox = " "
+Macos = " "
+Manjaro = " "
+Mariner = " "
+MidnightBSD = " "
+Mint = " "
+NetBSD = " "
+NixOS = " "
+Nobara = " "
+OpenBSD = "󰈺 "
+OracleLinux = "󰌷 "
+Pop = " "
+Raspbian = " "
+RedHatEnterprise = " "
+Redhat = " "
+Redox = "󰀘 "
+RockyLinux = " "
+SUSE = " "
+Solus = "󰠳 "
+Ubuntu = " "
+Unknown = " "
+Void = " "
+Windows = "󰍲 "
+openSUSE = " "
+
+[package]
+format = "[$symbol($version)]($style)"
+symbol = " 󰏗 "
+
+[palettes.dms]
+error = "#f2b8b5"
+on_error = "#601410"
+on_primary = "#000000"
+on_secondary = "#000000"
+on_surface = "#e0e2e8"
+on_surface_variant = "#c2c7cf"
+on_tertiary = "#000000"
+outline = "#42474e"
+primary = "#42a5f5"
+secondary = "#8ab4f8"
+surface = "#101418"
+surface_variant = "#1d2024"
+tertiary = "#8ab4f8"
+
+[perl]
+format = "[$symbol($version)]($style)"
+symbol = "  "
+
+[php]
+format = "[$symbol($version)]($style)"
+symbol = "  "
+
+[pijul_channel]
+format = "[$symbol($version)]($style)"
+symbol = "  "
+
+[python]
+format = "[$symbol($version)]($style)"
+symbol = "  "
+
+[rlang]
+format = "[$symbol($version)]($style)"
+symbol = " 󰟔 "
+
+[ruby]
+format = "[$symbol($version)]($style)"
+symbol = "  "
+
+[rust]
+format = "[$symbol($version)]($style)"
+symbol = " 󱘗 "
+
+[scala]
+format = "[$symbol($version)]($style)"
+symbol = "  "
+
+[swift]
+format = "[$symbol($version)]($style)"
+symbol = "  "
+
+[username]
+disabled = false
+format = "[$user ](bg:secondary fg:on_secondary)"
+show_always = true
+
+[zig]
+format = "[$symbol($version)]($style)"
+symbol = "  "
