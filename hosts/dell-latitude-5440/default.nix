@@ -16,6 +16,19 @@
     powertop
   ];
 
+  hardware = {
+    bluetooth = {
+      enable = true;
+      powerOnBoot = true;
+      settings = {
+        General = {
+          Enable = "Source,Sink,Media,Socket";
+          Experimental = true;
+        };
+      };
+    };
+  };
+
   services = {
     # thermald.enable = true;
     # cpupower-gui.enable = true;
