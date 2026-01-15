@@ -99,6 +99,14 @@
           inherit self inputs username;
         };
       };
+      dell-latitude-5440 = nixpkgs.lib.nixosSystem {
+        inherit system;
+        modules = [(import ./hosts/dell-latitude-5440)];
+        specialArgs = {
+          host = "dell-latitude-5440";
+          inherit self inputs username;
+        };
+      };
     };
   };
 }

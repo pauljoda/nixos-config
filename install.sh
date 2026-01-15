@@ -195,6 +195,7 @@ install() {
     echo -e "Copying ${MAGENTA}/etc/nixos/hardware-configuration.nix${NORMAL} to ${MAGENTA}./hosts/${HOST}/${NORMAL}\n"
     cp /etc/nixos/hardware-configuration.nix hosts/${HOST}/hardware-configuration.nix
     sleep 0.2
+    git add .
 
     # Last Confirmation
     echo -en "You are about to start the system build, do you want to process ? "
