@@ -8,7 +8,7 @@
     hypr-contrib.url = "github:hyprwm/contrib";
     hyprpicker.url = "github:hyprwm/hyprpicker";
 
-    stylix.url = "github:danth/stylix";
+    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
 
     hyprtasking = {
       url = "github:raybbian/hyprtasking";
@@ -31,17 +31,6 @@
     };
 
     zen-browser.url = "github:youwen5/zen-browser-flake";
-
-    noctalia = {
-      url = "github:noctalia-dev/noctalia-shell";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    quickshell = {
-      url = "git+https://git.outfoxxed.me/outfoxxed/quickshell";
-    };
-
-    swww.url = "github:LGFae/swww";
 
     nvim-bundle = {
       url = "github:jla2000/nvim-bundle";

@@ -1,12 +1,14 @@
 {
   pkgs,
   config,
+  inputs,
   ...
 }: {
   imports = [
     ./hardware-configuration.nix
     ./../../modules/core
     ./../../modules/desktop-enviornment
+    inputs.nixos-hardware.nixosModules.dell-inspiron-14-5420
   ];
 
   environment.systemPackages = with pkgs; [
