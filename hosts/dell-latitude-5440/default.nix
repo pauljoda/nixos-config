@@ -6,6 +6,7 @@
   imports = [
     ./hardware-configuration.nix
     ./../../modules/core
+    ./../../modules/desktop-enviornment
   ];
 
   environment.systemPackages = with pkgs; [
@@ -19,6 +20,12 @@
     # thermald.enable = true;
     # cpupower-gui.enable = true;
     power-profiles-daemon.enable = true;
+
+    # Thunderbolt
+    hardware.bolt.enable = true;
+
+    # Bluetooth
+    blueman.enable = true;
 
     upower = {
       enable = true;

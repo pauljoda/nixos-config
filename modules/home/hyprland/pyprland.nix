@@ -6,7 +6,7 @@
 }: {
   home.packages = [
     #pkgs.pyprland
-    inputs.pyprland.packages."${pkgs.system}".pyprland
+    inputs.pyprland.packages."${pkgs.stdenv.hostPlatform.system}".pyprland
   ];
   xdg.configFile."hypr/pyprland.toml".text = ''
     [pyprland]

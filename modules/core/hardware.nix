@@ -1,14 +1,12 @@
-{ pkgs, ... }:
-{  
+{pkgs, ...}: {
   hardware = {
     graphics = {
       enable = true;
       extraPackages = with pkgs; [
-    
       ];
     };
 
-     bluetooth = {
+    bluetooth = {
       enable = true;
       powerOnBoot = true;
       settings = {
@@ -20,10 +18,4 @@
     };
   };
   hardware.enableRedistributableFirmware = true;
-
-  # Thunderbolt
-  services.hardware.bolt.enable = true;
-
-  # Bluetooth
-  services.blueman.enable = true;
 }

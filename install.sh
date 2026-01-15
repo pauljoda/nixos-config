@@ -88,7 +88,7 @@ get_host() {
     confirm
     mkdir -p "hosts/${HOST}"
 
-    echo -en "Choose a ${GREEN}base template${NORMAL} - [${YELLOW}D${NORMAL}]esktop, [${YELLOW}L${NORMAL}]aptop or [${YELLOW}V${NORMAL}]irtual machine: "
+    echo -en "Choose a ${GREEN}base template${NORMAL} - [${YELLOW}D${NORMAL}]esktop, [${YELLOW}L${NORMAL}]aptop, [${YELLOW}S${NORMAL}]erver or [${YELLOW}V${NORMAL}]irtual machine: "
     read -n 1 -r
     echo
 
@@ -96,10 +96,12 @@ get_host() {
         TEMPLATE='desktop'
     elif [[ $REPLY =~ ^[Ll]$ ]]; then
         TEMPLATE='laptop'
+    elif [[ $REPLY =~ ^[Ss]$ ]]; then
+        TEMPLATE='server'
     elif [[ $REPLY =~ ^[Vv]$ ]]; then
         TEMPLATE='vm'
     else
-        echo "Invalid choice. Please select 'D' for desktop, 'L' for laptop or 'V' for virtual machine."
+        echo "Invalid choice. Please select 'D' for desktop, 'L' for laptop, 'S' for server or 'V' for virtual machine."
         exit 1
     fi
 

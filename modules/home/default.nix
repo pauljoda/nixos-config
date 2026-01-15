@@ -7,10 +7,10 @@
   imports = [
     ./audacious/audacious.nix # music player
     ./bat.nix # better cat command
-    ./browser.nix
+    ./browser.nix # Zen
     ./btop.nix # resources monitor
     ./cava.nix # audio visualizer
-    ./dms.nix
+    ./dms.nix # Desktop shell
     ./git.nix # version control
     ./ghostty.nix # TTY
     ./gtk.nix # gtk theme
@@ -18,9 +18,9 @@
     ./hyprtasking.nix # Workspace viewer
     ./kitty.nix # terminal (backup)
     ./nvim.nix # neovim editor
-    #./noctalia.nix
+    #    ./dev.nix # Developer stuff
     ./packages.nix # other packages
-    ./starship # shell prompt
+    ./starship.nix # shell prompt
     ./vscode.nix # vscode fork
     ./xdg-mimes.nix
     ./zsh # shell
