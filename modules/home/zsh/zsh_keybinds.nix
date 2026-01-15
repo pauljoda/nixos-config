@@ -4,10 +4,9 @@
   pkgs,
   host,
   ...
-}:
-{
+}: {
   programs.zsh = {
-    initExtra = ''
+    initContent = ''
       # Use emacs key bindings
       bindkey -e
 
@@ -73,7 +72,7 @@
       bindkey '\ew' kill-region                             # [Esc-w] - Kill from the cursor to the mark
       bindkey -s '\el' 'ls\n'                               # [Esc-l] - run command: ls
       bindkey ' ' magic-space                               # [Space] - don't do history expansion
-            
+
       # Edit the current command line in $EDITOR
       autoload -U edit-command-line
       zle -N edit-command-line

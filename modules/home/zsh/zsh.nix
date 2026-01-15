@@ -3,14 +3,16 @@
   config,
   pkgs,
   host,
+  lib,
   ...
-}:
-{
+}: {
   programs.zsh = {
     enable = true;
-    # enableCompletion = true;
+    enableCompletion = true;
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
+
+    dotDir = "${config.xdg.configHome}/zsh";
 
     oh-my-zsh = {
       enable = true;
@@ -106,7 +108,7 @@
       zstyle ':fzf-tab:*' switch-group ',' '.'
     '';
 
-    initExtraFirst = ''
+    initContent = lib.mkBefore ''
       DISABLE_AUTO_UPDATE=true
       DISABLE_MAGIC_FUNCTIONS=true
       export "MICRO_TRUECOLOR=1"
