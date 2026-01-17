@@ -96,6 +96,14 @@
           inherit self inputs username;
         };
       };
+      custom-pc-2026 = nixpkgs.lib.nixosSystem {
+        inherit system;
+        modules = [(import ./hosts/custom-pc-2026)];
+        specialArgs = {
+          host = "custom-pc-2026";
+          inherit self inputs username;
+        };
+      };
     };
   };
 }
