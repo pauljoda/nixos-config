@@ -192,11 +192,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1768068402,
-        "narHash": "sha256-bAXnnJZKJiF7Xr6eNW6+PhBf1lg2P1aFUO9+xgWkXfA=",
+        "lastModified": 1768530555,
+        "narHash": "sha256-EBXKDho4t1YSgodAL6C8M3UTm8MGMZNQ9rQnceR5+6c=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "8bc5473b6bc2b6e1529a9c4040411e1199c43b4c",
+        "rev": "d21bee5abf9fb4a42b2fa7728bf671f8bb246ba6",
         "type": "github"
       },
       "original": {
@@ -210,11 +210,11 @@
         "nixpkgs": "nixpkgs_2"
       },
       "locked": {
-        "lastModified": 1766066098,
-        "narHash": "sha256-d3HmUbmfTDIt9mXEHszqyo2byqQMoyJtUJCZ9U1IqHQ=",
+        "lastModified": 1768426687,
+        "narHash": "sha256-CopNx3j//gZ2mE0ggEK9dZ474UcbDhpTw+KMor8mSxI=",
         "owner": "hyprwm",
         "repo": "contrib",
-        "rev": "41dbcac8183bb1b3a4ade0d8276b2f2df6ae4690",
+        "rev": "541628cebe42792ddf5063c4abd6402c2f1bd68f",
         "type": "github"
       },
       "original": {
@@ -298,11 +298,11 @@
         "xdph": "xdph"
       },
       "locked": {
-        "lastModified": 1768144432,
-        "narHash": "sha256-lLV0egdN9VF6BjhG6GVEVMviFuM05XCv35YNsfLzS9w=",
+        "lastModified": 1768492847,
+        "narHash": "sha256-oEphfkN6TGm9YCR6xQZVunte+lIGu73hwOohQio3fnA=",
         "ref": "refs/heads/main",
-        "rev": "fbf421df889ceff3bac08a9f4b9493def5eecc4d",
-        "revCount": 6805,
+        "rev": "ac9df44788492fd1d12da8ec0fbbf691386c45a4",
+        "revCount": 6810,
         "submodules": true,
         "type": "git",
         "url": "https://github.com/hyprwm/Hyprland"
@@ -447,11 +447,11 @@
         "systems": "systems_3"
       },
       "locked": {
-        "lastModified": 1767404704,
-        "narHash": "sha256-813xDQnGphngERKqYIuZKx70ogjLe4NJbjWTdWtI/As=",
+        "lastModified": 1768334720,
+        "narHash": "sha256-442ACqzw6OKx95lpPJF09ArsnE8pqjBhg3WVF4eUBDk=",
         "owner": "raybbian",
         "repo": "hyprtasking",
-        "rev": "40e6f615c6e2f7f016d1ee6cfa34668edbeb0cc1",
+        "rev": "7d4fd556169095ce1a5c60b8dac7aefbd17ba4bf",
         "type": "github"
       },
       "original": {
@@ -754,11 +754,11 @@
     },
     "nixpkgs_5": {
       "locked": {
-        "lastModified": 1767892417,
-        "narHash": "sha256-dhhvQY67aboBk8b0/u0XB6vwHdgbROZT3fJAjyNh5Ww=",
+        "lastModified": 1768305791,
+        "narHash": "sha256-AIdl6WAn9aymeaH/NvBj0H9qM+XuAuYbGMZaP0zcXAQ=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "3497aa5c9457a9d88d71fa93a4a8368816fbeeba",
+        "rev": "1412caf7bf9e660f2f962917c14b1ea1c3bc695e",
         "type": "github"
       },
       "original": {
@@ -770,11 +770,11 @@
     },
     "nixpkgs_6": {
       "locked": {
-        "lastModified": 1767892417,
-        "narHash": "sha256-dhhvQY67aboBk8b0/u0XB6vwHdgbROZT3fJAjyNh5Ww=",
+        "lastModified": 1768305791,
+        "narHash": "sha256-AIdl6WAn9aymeaH/NvBj0H9qM+XuAuYbGMZaP0zcXAQ=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "3497aa5c9457a9d88d71fa93a4a8368816fbeeba",
+        "rev": "1412caf7bf9e660f2f962917c14b1ea1c3bc695e",
         "type": "github"
       },
       "original": {
@@ -838,11 +838,11 @@
         "nixpkgs": "nixpkgs_6"
       },
       "locked": {
-        "lastModified": 1768158274,
-        "narHash": "sha256-PuoUvuAr6aoS9gtqZRuiQOAjwKnJ/SiP/cfeqoGVs0U=",
+        "lastModified": 1768534874,
+        "narHash": "sha256-Fmg0M+TMhacDxVCiIOJcV15moGsJbd9LRY3sMw/UUtQ=",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "d75292d60416ec657064488d42cc364c2b3b273f",
+        "rev": "ee8730e82e9836aa5f4a1fdf20b39a4aa50e30ed",
         "type": "github"
       },
       "original": {
@@ -902,11 +902,11 @@
         "systems": "systems_5"
       },
       "locked": {
-        "lastModified": 1767986261,
-        "narHash": "sha256-Xbnb6q2UZf5hLzO7bRzptN7INS88h8pv8YjWyaUgdPA=",
+        "lastModified": 1768512554,
+        "narHash": "sha256-g52Z7sbguI0tZiHJGXmYGxgBo2UAToIiHF/06iTfKFo=",
         "ref": "refs/heads/main",
-        "rev": "f33bead8628e7354b71441965976b6035563882a",
-        "revCount": 1657,
+        "rev": "3e4cb01035def3f30d35e1145b9cea1394e5c70e",
+        "revCount": 1672,
         "type": "git",
         "url": "https://github.com/hyprland-community/pyprland"
       },

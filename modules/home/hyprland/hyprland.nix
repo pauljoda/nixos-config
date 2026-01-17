@@ -21,9 +21,9 @@
     enable = true;
     xwayland = {
       enable = true;
-      # hidpi = true;
     };
-    # enableNvidiaPatches = false;
+
+    settings.misc.disable_watchdog_warning = true;
     systemd.enable = true;
   };
 }

@@ -1,16 +1,19 @@
 {
   pkgs,
   config,
+  inputs,
   ...
 }: {
   nixpkgs.config.permittedInsecurePackages = [
-    "broadcom-sta-6.30.223.271-59-6.18.4"
+    "broadcom-sta-6.30.223.271-59-6.18.5"
   ];
 
   imports = [
     ./hardware-configuration.nix
     ./../../modules/core
     ./../../modules/desktop-enviornment
+    inputs.nixos-hardware.nixosModules.common-cpu-intel
+    #inputs.nixos-hardware.nixosModules.apple-macbook-air-7
   ];
 
   environment.systemPackages = with pkgs; [
@@ -21,6 +24,8 @@
   ];
 
   hardware = {
+    #facetimehd.enable = true;
+
     bluetooth = {
       enable = true;
       powerOnBoot = true;
@@ -34,6 +39,8 @@
   };
 
   services = {
+    mbpfan.enable = true;
+
     # thermald.enable = true;
     # cpupower-gui.enable = true;
     power-profiles-daemon.enable = true;
