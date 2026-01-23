@@ -1,10 +1,9 @@
 {
   config,
   libs,
-  lib,
   pkgs,
+  lib,
   inputs,
-  username,
   ...
 }: let
   nvidiaPackage = config.hardware.nvidia.package;
@@ -13,9 +12,9 @@ in {
     ./hardware-configuration.nix
     ./../../modules/core
     ./../../modules/desktop-enviornment
+    inputs.nixos-hardware.nixosModules.common-cpu-intel
     ./../../modules/core/ai.nix
   ];
-  nixpkgs.overlays = [inputs.comfyui-nix.overlays.default];
 
   hardware = {
     bluetooth = {
@@ -36,4 +35,7 @@ in {
   services.xserver.videoDrivers = lib.mkDefault ["nvidia"];
 
   powerManagement.cpuFreqGovernor = "performance";
+
+  #Load necessary modules at boot
+  boot.initrd.kernelModules = ["nvidia" "nvidia_modeset" "nvidia_uvm" "nvidia_drm"];
 }

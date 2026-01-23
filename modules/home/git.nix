@@ -11,13 +11,5 @@
       init.defaultBranch = "main";
       credential.helper = "store";
     };
-
-    # userName = "pauljoda";
-    # userEmail = "pauldavis101@gmail.com";
-
-    # extraConfig = {
-    #   init.defaultBranch = "main";
-    #   credential.helper = "store";
-    # };
   };
 }
