@@ -4,6 +4,7 @@
   lib,
   pkgs,
   inputs,
+  username,
   ...
 }: let
   nvidiaPackage = config.hardware.nvidia.package;
@@ -29,19 +30,34 @@ in {
     };
   };
 
+  #environment.systemPackages = with pkgs; [searxng];
+
   services = {
     ollama = {
       enable = true;
       package = pkgs.ollama-cuda;
     };
 
-    open-webui.enable = true;
+    open-webui = {
+      enable = true;
+      host = "0.0.0.0";
+    };
 
     searx = {
       enable = true;
+      redisCreateLocally = true;
       settings = {
-        server.port = 8888;
-        server.bind_address = "127.0.0.1";
+        server = {
+          base_url = "https://search.pauljoda.com";
+          port = 8888;
+          bind_address = "127.0.0.1";
+          secret_key = "some-secret-no-peaking";
+          limiter = true;
+          public_instance = true;
+          image_proxy = true;
+          method = "GET";
+        };
+        search.formats = ["html" "json"];
       };
     };
 
@@ -52,8 +68,10 @@ in {
       #   Note: Pre-built PyTorch wheels already support all GPU architectures
       enableManager = true; # Enable the built-in ComfyUI Manager
       port = 8188;
-      listenAddress = "127.0.0.1"; # Use "0.0.0.0" for network access
-      dataDir = "/var/lib/comfyui";
+      listenAddress = "0.0.0.0"; # Use "0.0.0.0" for network access
+      dataDir = "/home/${username}/comfyui-data";
+      user = "${username}";
+      group = "users";
       openFirewall = false;
       # extraArgs = [ "--lowvram" ];
       # environment = { };
