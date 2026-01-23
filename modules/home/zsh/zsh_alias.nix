@@ -33,7 +33,7 @@
       # Nixos
       cdnix = "cd ~/nixos-config";
       ns = "nom-shell --run zsh";
-      nix-switch = "nh os switch ~/nixos-config";
+      nix-switch = "nh os switch ~/nixos-config --accept-flake-config";
       nix-update = "nh os switch --update";
       nix-clean = "nh clean all --keep 5";
       nix-search = "nh search";

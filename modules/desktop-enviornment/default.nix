@@ -14,5 +14,6 @@
     ./steam.nix
     ./wayland.nix
     ./xserver.nix
+    ./user.nix
   ];
 }
