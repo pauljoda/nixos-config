@@ -30,6 +30,17 @@ in {
     };
   };
 
+  # allow local remote access to make it easier to toy around with the system
+  services.openssh = {
+    enable = true;
+    ports = [22];
+    settings = {
+      PasswordAuthentication = true;
+      AllowUsers = null;
+      PermitRootLogin = "yes";
+    };
+  };
+
   # enable the open source drivers if the package supports it
   hardware.nvidia.open = lib.mkOverride 990 (nvidiaPackage ? open && nvidiaPackage ? firmware);
 
