@@ -32,6 +32,9 @@
 
     python3 # The Python programming language, version 3
 
+    claude-code
+    codex
+
     matugen # Wallpaper color scheme generator
 
     bleachbit # A free and open-source disk space cleaner, privacy manager, and computer system optimizer

@@ -156,8 +156,8 @@
         "$mainMod SHIFT, W, exec, vm-start"
 
         # screenshot
-        "$mainMod, Print, exec, grimblast --notify --freeze save area ~/Pictures/$(date +'%Y-%m-%d-At-%Ih%Mm%Ss').png"
-        ",Print, exec, grimblast --notify --freeze copy area"
+        "$mainMod Alt, 4, exec, dms screenshot --no-file"
+        "$mainMod Alt, 5, exec, dms screenshot output -o ~/Pictures/$(date +'%Y-%m-%d-At-%Ih%Mm%Ss').png"
 
         # switch focus
         "$mainMod, left, movefocus, l"
