@@ -48,6 +48,13 @@
           hash = "sha256-MueLFV5gaK6vPI0BEPxL3ZueOK2eFcZzajLyo95HrOE=";
         };
 
+        # ComfyUI-Flow = pkgs.fetchFromGitHub {
+        #   owner = "diStyApps";
+        #   repo = "ComfyUI-disty-Flow";
+        #   rev = "5acb9afa8e545227f1fed353e1a0aaa8791e4cc1";
+        #   hash = "sha256-tNZLdbwzCS5GQEVkG+8BuZ9hCJzKpBh5AQssV+HPrjs=";
+        # };
+
         # ComfyUI-VideoHelperSuite = pkgs.fetchFromGitHub {
         #   owner = "Kosinkadink";
         #   repo = "ComfyUI-VideoHelperSuite";

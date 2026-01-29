@@ -9,7 +9,13 @@
     nameservers = ["1.1.1.1"];
     firewall = {
       enable = true;
-      allowedTCPPorts = [22 80 443 59010 59011 8080 8188];
+      allowedTCPPorts = [22 80 443 59010 59011];
+      allowedTCPPortRanges = [
+        {
+          from = 8000;
+          to = 8999;
+        }
+      ];
       allowedUDPPorts = [59010 59011];
       # allowedUDPPortRanges = [
       # { from = 4000; to = 4007; }
