@@ -266,11 +266,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1769813945,
-        "narHash": "sha256-9ABv9Lo9t6MrFjlnRnU8Zw1C6LVj2+R8PipQ/rxGLHk=",
+        "lastModified": 1769872935,
+        "narHash": "sha256-07HMIGQ/WJeAQJooA7Kkg1SDKxhAiV6eodvOwTX6WKI=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "475921375def3eb930e1f8883f619ff8609accb6",
+        "rev": "f4ad5068ee8e89e4a7c2e963e10dd35cd77b37b7",
         "type": "github"
       },
       "original": {
@@ -372,11 +372,11 @@
         "xdph": "xdph"
       },
       "locked": {
-        "lastModified": 1769802121,
-        "narHash": "sha256-VNzAGXvGqg95orkFuQFnOLZbwkCOArs3tnHWVfylO9Q=",
+        "lastModified": 1769866762,
+        "narHash": "sha256-RlZMgFz666Bc5ZxLUd+poTfs5RBIVKawuNRSkf5MyJ4=",
         "ref": "refs/heads/main",
-        "rev": "ec120d57328e5ae4bfc93a7e809ace47d98f2dc3",
-        "revCount": 6848,
+        "rev": "db6114c6c53edc4a60695a12d7f857308b6cd6cd",
+        "revCount": 6852,
         "submodules": true,
         "type": "git",
         "url": "https://github.com/hyprwm/Hyprland"
@@ -959,11 +959,11 @@
         "nixpkgs": "nixpkgs_8"
       },
       "locked": {
-        "lastModified": 1769834069,
-        "narHash": "sha256-GjeN/5TdWev/L/Izem3XScV6i/55Z+n+GfjKa1srBcU=",
+        "lastModified": 1769876589,
+        "narHash": "sha256-/r1fEFKQqMNtv6c4JUXjy1Au06PrQp8K8AP2rWEM/hI=",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "2db81de33100ef4d86ebc80dc4bc30df1fe97c5d",
+        "rev": "f792ac11fc18ef015d41102bf86d992fa39cb1d0",
         "type": "github"
       },
       "original": {
@@ -1023,11 +1023,11 @@
         "systems": "systems_6"
       },
       "locked": {
-        "lastModified": 1769722205,
-        "narHash": "sha256-Y5T8V5l/hlGEVzS827OX3n+IftXR9kSaEeXO9AntH/4=",
+        "lastModified": 1769872774,
+        "narHash": "sha256-FioqEOhAdKD5aEdC09hMwZA5e+NQeBPpJD1PbT7RXTU=",
         "ref": "refs/heads/main",
-        "rev": "d4193959b472ab8856cfed34571fea29cf48a499",
-        "revCount": 1720,
+        "rev": "701f181b4a1d48fa01d3b41c1825c0593d98325d",
+        "revCount": 1730,
         "type": "git",
         "url": "https://github.com/hyprland-community/pyprland"
       },
