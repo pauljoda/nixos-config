@@ -31,6 +31,7 @@
     sushi
 
     python3 # The Python programming language, version 3
+    nodejs
 
     claude-code
     codex

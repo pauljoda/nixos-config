@@ -7,11 +7,15 @@
   username,
   ...
 }: {
-  imports = [
-    inputs.comfyui-nix.nixosModules.default
+  nixpkgs.overlays = [
+    inputs.comfyui-nix.overlays.default
+    inputs.comfy-output-viewer.overlays.default
   ];
 
-  nixpkgs.overlays = [inputs.comfyui-nix.overlays.default];
+  imports = [
+    inputs.comfyui-nix.nixosModules.default
+    inputs.comfy-output-viewer.nixosModules.default
+  ];
 
   services = {
     ollama = {
@@ -98,6 +102,17 @@
         # };
       };
       # environment = { };
+    };
+
+    comfy-output-viewer = {
+      enable = true;
+      openFirewall = true;
+      outputDir = "/var/lib/comfyui/output";
+      dataDir = "/var/lib/comfy-output-viewer";
+      port = 8008;
+      # syncIntervalMs = 60000;
+      # thumbMax = 512;
+      # thumbQuality = 72;
     };
   };
 }

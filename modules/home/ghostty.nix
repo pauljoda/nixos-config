@@ -10,7 +10,7 @@
   programs.ghostty = {
     enable = true;
     settings = {
-      "config-file" = "${config.home.homeDirectory}/.config/ghostty/config-dankcolors";
+      "config-file" = "${config.home.homeDirectory}/.config/ghostty/themes/dankcolors";
       "app-notifications" = "no-clipboard-copy,no-config-reload";
     };
   };

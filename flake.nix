@@ -42,6 +42,8 @@
     };
 
     comfyui-nix.url = "github:utensils/comfyui-nix";
+
+    comfy-output-viewer.url = "github:pauljoda/ComfyOutputViewer";
   };
 
   nixConfig = {

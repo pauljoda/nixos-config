@@ -8,7 +8,7 @@
     };
 
     enableSystemMonitoring = true;
-    enableClipboard = true;
+    # enableClipboard = true; Enabled by default in new versions
     enableDynamicTheming = true;
     enableAudioWavelength = true;
     enableCalendarEvents = true;
