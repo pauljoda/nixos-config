@@ -15,7 +15,10 @@
   imports = [
     inputs.comfyui-nix.nixosModules.default
     inputs.comfy-output-viewer.nixosModules.default
+    ./whisper.nix
   ];
+
+  networking.firewall.allowedTCPPorts = [10300];
 
   services = {
     ollama = {

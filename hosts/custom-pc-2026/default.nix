@@ -41,6 +41,11 @@ in {
     };
   };
 
+  environment.systemPackages = with pkgs; [
+    # Add gcc and tree-sitter-cli
+    gcc
+  ];
+
   # enable the open source drivers if the package supports it
   hardware.nvidia.open = lib.mkOverride 990 (nvidiaPackage ? open && nvidiaPackage ? firmware);
 
