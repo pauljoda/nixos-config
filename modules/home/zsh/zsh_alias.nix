@@ -38,6 +38,7 @@
       nix-clean = "nh clean all --keep 5";
       nix-search = "nh search";
       nix-test = "nh os test";
+      nix-update-package = "cdnix; nix flake lock --update-input nixpkgs --update-input";
 
       # python
       piv = "python -m venv .venv";

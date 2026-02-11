@@ -1,5 +1,5 @@
 {
-  description = "itjoda's nixos configuration";
+  description = "pauljoda's nixos configuration";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
@@ -32,9 +32,7 @@
 
     zen-browser.url = "github:youwen5/zen-browser-flake";
 
-    nvim-bundle = {
-      url = "github:jla2000/nvim-bundle";
-    };
+    lazyvim.url = "github:pfassina/lazyvim-nix";
 
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -44,6 +42,8 @@
     comfyui-nix.url = "github:utensils/comfyui-nix";
 
     comfy-output-viewer.url = "github:pauljoda/ComfyOutputViewer";
+    
+    llm-agents.url = "github:numtide/llm-agents.nix";
   };
 
   nixConfig = {
