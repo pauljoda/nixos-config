@@ -42,7 +42,7 @@
     comfyui-nix.url = "github:utensils/comfyui-nix";
 
     comfy-output-viewer.url = "github:pauljoda/ComfyOutputViewer";
-    
+
     llm-agents.url = "github:numtide/llm-agents.nix";
   };
 
@@ -52,85 +52,90 @@
       "https://nix-community.cachix.org"
       "https://comfyui.cachix.org"
       "https://colmena.cachix.org"
+      "https://cache.numtide.com"
     ];
     extra-trusted-public-keys = [
       "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
       "comfyui.cachix.org-1:33mf9VzoIjzVbp0zwj+fT51HG0y31ZTK3nzYZAX0rec="
       "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
       "colmena.cachix.org-1:7BzpDnjjH8ki2CT3f6GdOk7QAzPOl+1t3LvTLXqYcSg="
+      "niks3.numtide.com-1:DTx8wZduET09hRmMtKdQDxNNthLQETkc/yaX7M4qK0g="
     ];
   };
 
-  outputs = {
-    nixpkgs,
-    self,
-    ...
-  } @ inputs: let
-    username = "paul";
-    system = "x86_64-linux";
-    pkgs = import nixpkgs {
-      inherit system;
-      config.allowUnfree = true;
+  outputs =
+    {
+      nixpkgs,
+      self,
+      ...
+    }@inputs:
+    let
+      username = "paul";
+      system = "x86_64-linux";
+      pkgs = import nixpkgs {
+        inherit system;
+        config.allowUnfree = true;
+      };
+      lib = nixpkgs.lib;
+    in
+    {
+      nixosConfigurations = {
+        desktop = nixpkgs.lib.nixosSystem {
+          inherit system;
+          modules = [ (import ./hosts/desktop) ];
+          specialArgs = {
+            host = "desktop";
+            inherit self inputs username;
+          };
+        };
+        laptop = nixpkgs.lib.nixosSystem {
+          inherit system;
+          modules = [ (import ./hosts/laptop) ];
+          specialArgs = {
+            host = "laptop";
+            inherit self inputs username;
+          };
+        };
+        vm = nixpkgs.lib.nixosSystem {
+          inherit system;
+          modules = [ (import ./hosts/vm) ];
+          specialArgs = {
+            host = "vm";
+            inherit self inputs username;
+          };
+        };
+        macbook-air-2013 = nixpkgs.lib.nixosSystem {
+          inherit system;
+          modules = [ (import ./hosts/macbook-air-2013) ];
+          specialArgs = {
+            host = "macbook-air-2013";
+            inherit self inputs username;
+          };
+        };
+        dell-latitude-5440 = nixpkgs.lib.nixosSystem {
+          inherit system;
+          modules = [ (import ./hosts/dell-latitude-5440) ];
+          specialArgs = {
+            host = "dell-latitude-5440";
+            inherit self inputs username;
+          };
+        };
+        custom-pc-2026 = nixpkgs.lib.nixosSystem {
+          inherit system;
+          modules = [ (import ./hosts/custom-pc-2026) ];
+          specialArgs = {
+            host = "custom-pc-2026";
+            inherit self inputs username;
+          };
+        };
+        thor-1 = nixpkgs.lib.nixosSystem {
+          inherit system;
+          modules = [ (import ./hosts/thor-1) ];
+          specialArgs = {
+            host = "thor-1";
+            inherit self inputs username;
+          };
+        };
+      };
     };
-    lib = nixpkgs.lib;
-  in {
-    nixosConfigurations = {
-      desktop = nixpkgs.lib.nixosSystem {
-        inherit system;
-        modules = [(import ./hosts/desktop)];
-        specialArgs = {
-          host = "desktop";
-          inherit self inputs username;
-        };
-      };
-      laptop = nixpkgs.lib.nixosSystem {
-        inherit system;
-        modules = [(import ./hosts/laptop)];
-        specialArgs = {
-          host = "laptop";
-          inherit self inputs username;
-        };
-      };
-      vm = nixpkgs.lib.nixosSystem {
-        inherit system;
-        modules = [(import ./hosts/vm)];
-        specialArgs = {
-          host = "vm";
-          inherit self inputs username;
-        };
-      };
-      macbook-air-2013 = nixpkgs.lib.nixosSystem {
-        inherit system;
-        modules = [(import ./hosts/macbook-air-2013)];
-        specialArgs = {
-          host = "macbook-air-2013";
-          inherit self inputs username;
-        };
-      };
-      dell-latitude-5440 = nixpkgs.lib.nixosSystem {
-        inherit system;
-        modules = [(import ./hosts/dell-latitude-5440)];
-        specialArgs = {
-          host = "dell-latitude-5440";
-          inherit self inputs username;
-        };
-      };
-      custom-pc-2026 = nixpkgs.lib.nixosSystem {
-        inherit system;
-        modules = [(import ./hosts/custom-pc-2026)];
-        specialArgs = {
-          host = "custom-pc-2026";
-          inherit self inputs username;
-        };
-      };
-      thor-1 = nixpkgs.lib.nixosSystem {
-        inherit system;
-        modules = [(import ./hosts/thor-1)];
-        specialArgs = {
-          host = "thor-1";
-          inherit self inputs username;
-        };
-      };
-    };
-  };
 }
